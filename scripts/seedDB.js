@@ -8,7 +8,15 @@ mongoose.connect(
   "mongodb://localhost/dreamtimedesigns"
 );
 
-const artSeed = [];
+const artSeed = [
+  {
+    title: "test01",
+    medium: "watercolor",
+    size: "4x5",
+    description: "Lorem Ipsum",
+    path: "/images/1.jpg"
+  }
+];
 
 db.Art
   .remove({})
