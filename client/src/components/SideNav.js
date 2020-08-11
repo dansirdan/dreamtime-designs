@@ -43,9 +43,9 @@ export default function TemporaryDrawer() {
         aria-label='menu'>
         <MenuIcon />
       </IconButton>
-      <Drawer open={state} onClose={toggleDrawer(false)} >
+      <Drawer open={state} onClose={toggleDrawer(false)}>
         <div
-            className={classes.root}
+          className={classes.root}
           role='presentation'
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}>

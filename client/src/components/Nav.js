@@ -60,16 +60,6 @@ const NavLinks = () => {
   );
 };
 
-const GridBurger = () => {
-  return (
-    <React.Fragment>
-      <Grid item xs={1}>
-        <SideNav />
-      </Grid>
-    </React.Fragment>
-  );
-};
-
 const NavBar = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));

@@ -1,10 +1,12 @@
 import React from "react";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListItemSecondaryAcrion from "@material-ui/core/ListItemSecondaryAction";
 import { Link } from "react-router-dom";
+import { IconButton } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
 
-export const ListItemLink = (props) => {
+export const ListItemLink = props => {
   const { icon, primary, to } = props;
 
   const renderLink = React.useMemo(
@@ -16,11 +18,17 @@ export const ListItemLink = (props) => {
   );
 
   return (
-    <li>
+
       <ListItem button component={renderLink}>
-        {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
+        {icon === "close" ? (
+          <ListItemSecondaryAcrion>
+            <IconButton edge='end' aria-label='close'>
+              <CloseIcon />
+            </IconButton>
+          </ListItemSecondaryAcrion>
+        ) : null}
       </ListItem>
-    </li>
+
   );
-}
+};

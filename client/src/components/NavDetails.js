@@ -3,6 +3,8 @@ import List from "@material-ui/core/List";
 import { ListItemLink } from "./ListItemLink";
 import Divider from "@material-ui/core/Divider";
 
+// This can be cleaned up and made a little shorter
+// i.e. collections.map();
 export const GalleryNavDetail = () => {
   return (
     <div>
@@ -21,6 +23,8 @@ export const SideNavDetail = () => {
   return (
     <div>
       <List component='nav' aria-label='burger menu nav'>
+        <ListItemLink to='/' primary='Dreamtime Designs' icon='close'/>
+        <Divider />
         <ListItemLink to='/gallery' primary='Gallery' />
         <Divider />
         <ListItemLink to='/gallery/cards' primary='Cards' />
