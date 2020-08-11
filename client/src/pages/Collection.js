@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from '../utils/API';
 
 const Collection = ({ match, location, collection }) => {
-  console.log("COLLECTION", collection)
+  console.log("COLLECTION", collection, match, location)
   const [art, setArt] = useState([])
 
   useEffect(() => {

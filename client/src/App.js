@@ -11,7 +11,6 @@ import {
 } from "./pages";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
-import GalleryNav from "./components/GalleryNav";
 import "./App.css";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <GalleryNav/>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/gallery' component={Gallery} />
@@ -29,7 +27,7 @@ function App() {
               exact
               path={[
                 "/gallery/watercolor",
-                "/gallery/pastel",
+                "/gallery/pastels",
                 "/gallery/portraits",
                 "/gallery/cards",
                 "/gallery/other",
