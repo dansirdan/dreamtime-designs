@@ -1,9 +1,9 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import { ListItemLink } from "../ListItemLink";
+import { ListItemLink } from "./ListItemLink";
 import Divider from "@material-ui/core/Divider";
 
-export const GalleryNav = () => {
+export const GalleryNavDetail = () => {
   return (
     <div>
       <List component='nav' aria-label='gallery nav'>

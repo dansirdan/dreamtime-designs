@@ -1,6 +1,6 @@
 import React from "react";
 import Drawer from "@material-ui/core/Drawer";
-import { SideNavDetail } from "./GalleryNav/index.js";
+import { SideNavDetail } from "./NavDetails.js";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import { IconButton } from "@material-ui/core";
@@ -8,7 +8,7 @@ import { IconButton } from "@material-ui/core";
 // TODO REVIEW STYLES
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    width: 300,
     maxWidth: 500,
     backgroundColor: theme.palette.background.paper,
   },
@@ -43,8 +43,9 @@ export default function TemporaryDrawer() {
         aria-label='menu'>
         <MenuIcon />
       </IconButton>
-      <Drawer open={state} onClose={toggleDrawer(false)}>
+      <Drawer open={state} onClose={toggleDrawer(false)} >
         <div
+            className={classes.root}
           role='presentation'
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}>

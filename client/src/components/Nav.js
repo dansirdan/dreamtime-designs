@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import SideNav from "../SideNav";
+import SideNav from "./SideNav";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   createMuiTheme,
@@ -64,11 +64,11 @@ const GridBurger = () => {
   return (
     <React.Fragment>
       <Grid item xs={1}>
-        <SideNav/>
+        <SideNav />
       </Grid>
     </React.Fragment>
-  )
-}
+  );
+};
 
 const NavBar = () => {
   const theme = useTheme();
@@ -80,10 +80,13 @@ const NavBar = () => {
       container
       alignItems='center'
       justify='center'
-      spacing={3}
+      spacing={0}
       className={classes.root}>
-      {matches ? <GridBurger/> : null}
-
+      {matches ? (
+        <Grid item xs={1}>
+          <SideNav />
+        </Grid>
+      ) : null}
       <Grid item xs={matches ? 11 : 12}>
         <Link to='/' style={{ textDecoration: "none" }}>
           <Typography variant='h1' className={classes.title}>
@@ -99,7 +102,6 @@ const NavBar = () => {
 const theme = createMuiTheme();
 
 const Nav = () => {
-
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
