@@ -19,7 +19,10 @@ function App() {
       <CssBaseline />
       <Router>
         <div>
-          <Nav />
+          {/* CHECKING IF CURRENT PATH IS HOMEPAGE FOR STYLIZED FEEL */}
+          <Route path='/'render={({ location }) => {
+                return location.pathname === "/" ? null : <Nav/>;
+              }}/>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/gallery' component={Gallery} />

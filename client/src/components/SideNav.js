@@ -37,7 +37,6 @@ export default function TemporaryDrawer() {
       <IconButton
         edge={false}
         className={classes.menuButton}
-        onClick
         onClick={toggleDrawer(true)}
         color='inherit'
         aria-label='menu'>
