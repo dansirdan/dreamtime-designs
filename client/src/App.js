@@ -1,16 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {
-  Home,
-  Gallery,
-  About,
-  Contact,
-  NoMatch,
-  Collection,
-  Detail,
-} from "./pages";
+import { Home, About, Contact, NoMatch } from "./pages";
+import Gallery from "./pages/Gallery";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
+import { StoreProvider } from "./utils/GlobalState";
 import "./App.css";
 
 function App() {
@@ -20,38 +14,46 @@ function App() {
       <Router>
         <div>
           {/* CHECKING IF CURRENT PATH IS HOMEPAGE FOR STYLIZED FEEL */}
-          <Route path='/'render={({ location }) => {
-                return location.pathname === "/" ? null : <Nav/>;
-              }}/>
+          {/* NAV route to display the Nav everywhere but the '/' path */}
+          <Route
+            path='/'
+            render={({ location }) => {
+              return location.pathname === "/" ? null : <Nav />;
+            }}
+          />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/gallery' component={Gallery} />
             <Route
               exact
               path={[
+                "/gallery",
                 "/gallery/watercolor",
                 "/gallery/pastels",
                 "/gallery/portraits",
                 "/gallery/cards",
                 "/gallery/other",
-              ]}
-              render={({ location }) => {
-                let pathArr = location.pathname.split("/");
-                return <Collection collection={pathArr[2]} />;
-              }}
-            />
-            <Route
-              exact
-              path={[
                 "/gallery/watercolor/:id",
-                "/gallery/pastel/:id",
+                "/gallery/pastels/:id",
                 "/gallery/portraits/:id",
                 "/gallery/cards/:id",
                 "/gallery/other/:id",
               ]}
               render={({ location }) => {
                 let pathArr = location.pathname.split("/");
-                return <Detail collection={pathArr[2]} id={pathArr[3]} />;
+                let requestObj = {
+                  detail: pathArr[3] || null,
+                  collection: pathArr[2] || null,
+                  page: pathArr[3]
+                    ? "detail"
+                    : null || pathArr[2]
+                    ? "collection"
+                    : null || pathArr[1],
+                };
+                return (
+                  <StoreProvider>
+                    <Gallery pathArr={pathArr} request={requestObj} />
+                  </StoreProvider>
+                );
               }}
             />
             <Route exact path='/about' component={About} />

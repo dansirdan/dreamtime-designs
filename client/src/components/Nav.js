@@ -3,13 +3,8 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import SideNav from "./SideNav";
+import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  createMuiTheme,
-  ThemeProvider,
-  useTheme,
-} from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,27 +37,31 @@ const NavLinks = () => {
   return (
     <React.Fragment>
       <Grid item xs={2}>
-        <Link to='/gallery' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>Gallery</Typography>
-        </Link>
+        <Box display={{ xs: "none", md: "block" }}>
+          <Link to='/gallery' style={{ textDecoration: "none" }}>
+            <Typography className={classes.pages}>Gallery</Typography>
+          </Link>
+        </Box>
       </Grid>
       <Grid item xs={2}>
-        <Link to='/about' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>About</Typography>
-        </Link>
+        <Box display={{ xs: "none", md: "block" }}>
+          <Link to='/about' style={{ textDecoration: "none" }}>
+            <Typography className={classes.pages}>About</Typography>
+          </Link>
+        </Box>
       </Grid>
       <Grid item xs={2}>
-        <Link to='/contact' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>Contact</Typography>
-        </Link>
+        <Box display={{ xs: "none", md: "block" }}>
+          <Link to='/contact' style={{ textDecoration: "none" }}>
+            <Typography className={classes.pages}>Contact</Typography>
+          </Link>
+        </Box>
       </Grid>
     </React.Fragment>
   );
 };
 
 const NavBar = () => {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
   return (
@@ -72,33 +71,29 @@ const NavBar = () => {
       justify='center'
       spacing={0}
       className={classes.root}>
-      {matches ? (
-        <Grid item xs={1}>
-          <SideNav />
+      <Grid container item justify='center' xs={12}>
+        <Grid item xs={1} md={false}>
+          <Box display={{ xs: "inline", md: "none" }}>
+            <SideNav />
+          </Box>
         </Grid>
-      ) : null}
-      <Grid item xs={matches ? 11 : 12}>
-        <Link to='/' style={{ textDecoration: "none" }}>
-          <Typography variant='h1' className={classes.title}>
-            Melony Mont-Eton
-          </Typography>
-        </Link>
+        <Grid item xs={11} md={12}>
+          <Link to='/' style={{ textDecoration: "none" }}>
+            <Typography variant='h1' className={classes.title}>
+              Melony Mont-Eton
+            </Typography>
+          </Link>
+        </Grid>
       </Grid>
       <Grid container item justify='center' xs={6}>
-        {matches ? null : <NavLinks />}
+        <NavLinks />
       </Grid>
     </Grid>
   );
 };
 
-const theme = createMuiTheme();
-
 const Nav = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <NavBar />
-    </ThemeProvider>
-  );
+  return <NavBar />;
 };
 
 export default Nav;

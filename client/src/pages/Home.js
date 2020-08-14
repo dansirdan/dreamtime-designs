@@ -2,14 +2,8 @@ import React from "react";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import {
-  useMediaQuery,
-  createMuiTheme,
-  ThemeProvider,
-  useTheme,
-} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import HomeNav from "../components/HomeNav";
 
@@ -30,50 +24,49 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const MainContainer = () => {
-  const theme = useTheme();
-  const mobileUI = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={12} md={6}>
-          <Card style={{ height: mobileUI ? "50vh" : "100vh" }}>
+          {/*  hide on screens smaller than md */}
+          <Box display={{ xs: 'none', md: 'block' }}>
+          <Card style={{ height: "100vh" }} square={true} elevation={0}>
             <CardMedia
               style={{ height: "100%" }}
               image='images/1.jpg'
               title='Stand In'
             />
           </Card>
+          </Box>
+          {/* hide on screens wider than md */}
+          <Box display={{ xs: 'block', md: 'none' }}>
+          <Card style={{ height: "50vh" }} square={true} elevation={0}>
+            <CardMedia
+              style={{ height: "100%" }}
+              image='images/1.jpg'
+              title='Stand In'
+            />
+          </Card>
+          </Box>
         </Grid>
         <Grid container item xs={12} md={6}>
-          {/* <Container
-            maxWidth='md'
-            style={{
-              backgroundColor: "#cfe8fc",
-              height: mobileUI ? "50vh" : "100vh",
-            }}> */}
             <Grid item xs={12}>
               <Typography variant='h2' className={classes.title}>Dreamtime Designs</Typography>
             </Grid>
             <Grid item>
             <HomeNav />
             </Grid>
-          {/* </Container> */}
         </Grid>
       </Grid>
     </div>
   );
 };
 
-const theme = createMuiTheme();
-
 const Home = () => {
-  const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
       <MainContainer />
-    </ThemeProvider>
   );
 };
 
