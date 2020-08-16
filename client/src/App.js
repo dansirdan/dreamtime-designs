@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home, About, Contact, NoMatch } from "./pages";
 import Gallery from "./pages/Gallery";
+import GalleryNew from "./pages/GalleryNew";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
-import { StoreProvider } from "./utils/GlobalState";
 import "./App.css";
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
           />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route
+            <Route path='/gallery' component={GalleryNew} />
+            {/* <Route
               exact
               path={[
                 "/gallery",
@@ -50,12 +51,10 @@ function App() {
                     : null || pathArr[1],
                 };
                 return (
-                  <StoreProvider>
                     <Gallery pathArr={pathArr} request={requestObj} />
-                  </StoreProvider>
                 );
               }}
-            />
+            /> */}
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
             <Route component={NoMatch} />

@@ -13,7 +13,7 @@ const artSeed = [];
 for (let i = 0; i < 10; i++) {
   artSeed.push( {
     title: "test" + 1,
-    medium: i % 2 === 0 ? "watercolor" : "pastel",
+    medium: i % 2 === 0 ? "watercolor" : "pastels",
     size: "4x5",
     description: "Lorem Ipsum",
     path: "/images/1.jpg"

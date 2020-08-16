@@ -5,6 +5,7 @@ const Detail = () => {
     return (
         <div>
             DETAIL
+            TODO: MAKE A MODAL
         </div>
     )
 }
