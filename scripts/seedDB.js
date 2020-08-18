@@ -9,11 +9,15 @@ mongoose.connect(
 );
 
 const artSeed = [];
+const mediums = ["cards", "watercolor", "pastels", "portraits", "other"];
 
 for (let i = 0; i < 10; i++) {
+
+  let rng = Math.floor(Math.random() * mediums.length)
+
   artSeed.push( {
     title: "test" + 1,
-    medium: i % 2 === 0 ? "watercolor" : "pastels",
+    medium: mediums[rng],
     size: "4x5",
     description: "Lorem Ipsum",
     path: "/images/1.jpg"

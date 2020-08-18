@@ -1,54 +1,58 @@
-import React , { useEffect, useState, createContext, } from "react";
-import { Redirect } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import API from "../utils/API";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import CollectionContext from "../utils/CollectionContext";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        overflow: 'hidden',
-        backgroundColor: theme.palette.background.paper,
-    },
-    gridList: {
-      width: "100%",
-      height: "100%",
-    },
-  }));
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: "100%",
+    height: "100%",
+  },
+}));
 
-const Collection = ({match}) => {
-    const classes = useStyles();
+const Collection = ({ match }) => {
+  const classes = useStyles();
+  const history = useHistory();
+  const { collection, collections, /*handleChangeCollection */ } = useContext(
+    CollectionContext
+  );
 
-    const [currentCollection, setCurrentCollection] = useState("");
-    const [collection, setCollection] = useState([]);
+  const handleOnClick = (_id, index) => {
+    console.log(match);
+    history.push(`${match.url}/${collection}/${_id}`);
+  };
 
-    useEffect(() => {
-        API.getAll()
-        .then(res => {
-            console.log(res.data)
-            let queryCollection = res.data.filter(art => art.medium === match.params.collection)
-            setCollection(queryCollection);
-            setCurrentCollection(match.params.collection)
-        })
-      }, [match.params.collection]);
-
-    return (
-            <div>
-            COLLECTION: {collection ? currentCollection : "loading"}
-            <div className={classes.root}>
-      <GridList cellHeight={400} className={classes.gridList} cols={3}>
-        {collection.map((tile) => (
-          <GridListTile key={tile._id} cols={tile.cols || 1}>
-            <img src={tile.path} alt={tile.title} />
-          </GridListTile>
-        ))}
-      </GridList>
+  return (
+    <div>
+      COLLECTION: {collection}
+      {collections.length > 0 ? (
+        <div className={classes.root}>
+          <GridList cellHeight={400} className={classes.gridList} cols={3}>
+            {collections.map((tile, index) => (
+              <GridListTile
+                component='button'
+                onClick={() => handleOnClick(tile._id, index)}
+                key={tile._id}
+                cols={tile.cols || 1}>
+                <img src={tile.path} alt={tile.title} />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+      ) : (
+        "loading"
+      )}
     </div>
-            </div>
-    )
+  );
 };
 
 export default Collection;

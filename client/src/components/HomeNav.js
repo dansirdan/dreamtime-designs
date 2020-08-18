@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import {
   createMuiTheme,
   ThemeProvider,
-  useTheme,
+  // useTheme,
 } from "@material-ui/core/styles";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -59,7 +59,7 @@ const NavLinks = () => {
 };
 
 const MainNav = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   //   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
