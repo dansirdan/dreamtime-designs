@@ -1,63 +1,26 @@
 import React, { useEffect, useState } from "react";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import { GalleryNavDetail } from "../components/NavDetails";
-import { Divider } from "@material-ui/core";
-import AtAGlance from "../components/AtAGlance";
-import Collection from "../components/Collection";
-import DetailNav from "../components/DetailNav";
-import Detail from "../components/Detail";
 import API from "../utils/API";
-import GalleryContext from "../utils/GalleryContext";
-import CollectionContext from "../utils/CollectionContext";
-import DetailContext from "../utils/DetailContext";
+import GalleryContainer from "../components/GalleryContainer";
+import { useParams} from "react-router-dom";
+import Collection from "../components/Collection";
+import DetailModal from "../components/DetailModal";
 
-const currentCollections = [
-  "cards",
-  "watercolor",
-  "pastels",
-  "portraits",
-  "other",
-];
-
-const Gallery = props => {
-  const [gallery, setGallery] = useState([]);
-
+const Gallery = () => {
+  const { collectionParam } = useParams();
   const [collections, setCollections] = useState([]);
-  const [collection, setCollection] = useState("");
+  
+  const [loading, setLoading] = useState(true)
 
-  const [showDetail, setShowDetail] = useState(false);
   const [detail, setDetail] = useState({});
   const [detailIndex, setDetailIndex] = useState(0);
+  const [showDetail, setShowDetail] = useState(false);
 
   useEffect(() => {
-    let pathArr = props.location.pathname.split("/");
-    let reqCollection = pathArr[2] || null;
-    let reqDetail = pathArr[3] || null;
-    setShowDetail(false);
-
-    API.getAll().then(res => {
-      setGallery(res.data);
-
-      if (reqCollection && currentCollections.includes(reqCollection)) {
-        setCollections([]);
-        setCollection(reqCollection);
-        const newCollections = res.data.filter(
-          data => data.medium === reqCollection
-        );
-        setCollections(newCollections);
-      }
-
-      if (reqDetail) {
-        API.getOne(reqDetail).then(res => {
-          setDetail(res.data);
-          setShowDetail(true);
-        });
-      }
+    API.getAll(collectionParam).then(res => {
+      setCollections(res.data);
+      setLoading(true)
     });
-  }, [props.location]);
+  }, [collectionParam]);
 
   const nextDetail = detailIndex => {
     if (detailIndex >= collections.length) {
@@ -65,7 +28,6 @@ const Gallery = props => {
     }
     setDetail(collections[detailIndex]);
     setDetailIndex(detailIndex);
-    window.history.pushState(`test`, 'test', `/gallery/${collection}/${collections[detailIndex]._id}`)
   };
 
   const previousDetail = detailIndex => {
@@ -74,15 +36,13 @@ const Gallery = props => {
     }
     setDetail(collections[detailIndex]);
     setDetailIndex(detailIndex);
-    window.history.pushState(`test`, 'test', `/gallery/${collection}/${collections[detailIndex]._id}`)
-
   };
 
   const handleChangeDetail = event => {
-    console.log(event)
-    const btnName = event.target.getAttribute("data-value");
+    const btnName = parseInt(event.target.getAttribute("data-value"));
     if (btnName === "next") {
       const newDetailIndex = detailIndex + 1;
+      console.log(newDetailIndex)
       nextDetail(newDetailIndex);
     } else {
       const newDetailIndex = detailIndex - 1;
@@ -90,57 +50,32 @@ const Gallery = props => {
     }
   };
 
-  const handleChangeCollection = collection => {
-    if (currentCollections.includes(collection)) {
-      setCollection(collection);
-      const newCollections = gallery.filter(data => data.medium === collection);
-      setCollections(newCollections);
-      console.log(newCollections);
+  const handleToggleDetail = event => {
+    const btnName = event.target.getAttribute("data-modal");
+    if (btnName === "show") {
+      const imgIndex = parseInt(event.target.getAttribute("data-index"));
+      setDetailIndex(imgIndex);
+      setDetail(collections[imgIndex]);
+      setShowDetail(true);
     } else {
-      props.history.push("/gallery");
+      setShowDetail(false);
     }
   };
 
-  let pathArr = props.location.pathname.split("/");
-  let isAtAGlance = pathArr.length === 2;
-  let reqCollection = pathArr[2] || null;
-
   return (
-    <GalleryContext.Provider value={{ gallery }}>
-      <CollectionContext.Provider
-        value={{ collection, collections, handleChangeCollection }}>
-        <DetailContext.Provider value={{ detail, handleChangeDetail }}>
-          <Container maxWidth='xl'>
-            <Divider />
-            <Grid container spacing={0}>
-              <Grid item md={2}>
-                {/*  hide on screens smaller than md */}
-                <Box border={2} display={{ xs: "none", md: "block" }}>
-                  <Card style={{ height: "100%" }} square={true} elevation={0}>
-                    <GalleryNavDetail />
-                    {showDetail ? <DetailNav /> : null}
-                  </Card>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={10}>
-                <Box border={2}>
-                  <Card style={{ height: "100%" }} square={true} elevation={0}>
-                    {showDetail ? <Detail /> : <div></div>}
-                    {reqCollection && !showDetail ? (
-                      <Collection {...props} />
-                    ) : isAtAGlance ? (
-                      <AtAGlance />
-                    ) : (
-                      <div></div>
-                    )}
-                  </Card>
-                </Box>
-              </Grid>
-            </Grid>
-          </Container>
-        </DetailContext.Provider>
-      </CollectionContext.Provider>
-    </GalleryContext.Provider>
+    <GalleryContainer detail={showDetail}>
+      <Collection
+        loading={loading}
+        handleToggleDetail={handleToggleDetail}
+        collections={collections}
+      />
+      <DetailModal
+        showDetail={showDetail}
+        handleToggleDetail={handleToggleDetail}
+        detail={detail}
+        handleChangeDetail={handleChangeDetail}
+      />
+    </GalleryContainer>
   );
 };
 

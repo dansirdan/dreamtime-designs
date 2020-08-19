@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import CollectionContext from "../utils/CollectionContext";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,36 +18,32 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Collection = ({ match }) => {
+const Collection = props => {
+  const { loading, collections, handleToggleDetail } = props;
   const classes = useStyles();
-  const history = useHistory();
-  const { collection, collections, /*handleChangeCollection */ } = useContext(
-    CollectionContext
-  );
-
-  const handleOnClick = (_id, index) => {
-    history.push(`${match.url}/${collection}/${_id}`);
-  };
 
   return (
     <div>
-      COLLECTION: {collection}
-      {collections.length > 0 ? (
+      <div>COLLECTION</div>
+      {loading ? (
         <div className={classes.root}>
           <GridList cellHeight={400} className={classes.gridList} cols={3}>
             {collections.map((tile, index) => (
-              <GridListTile
-                component='button'
-                onClick={() => handleOnClick(tile._id, index)}
-                key={tile._id}
-                cols={tile.cols || 1}>
-                <img src={tile.path} alt={tile.title} />
+              <GridListTile key={tile._id} cols={tile.cols || 1}>
+                <img
+                  style={{ cursor: "pointer" }}
+                  src={tile.path}
+                  alt={tile.title}
+                  onClick={handleToggleDetail}
+                  data-modal={"show"}
+                  data-index={index}
+                />
               </GridListTile>
             ))}
           </GridList>
         </div>
       ) : (
-        "loading"
+        <CircularProgress color="blue" />
       )}
     </div>
   );

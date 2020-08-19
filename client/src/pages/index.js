@@ -1,13 +1,15 @@
 import Home from './Home';
-import Gallery from './Gallery';
+import Main from './Main';
 import About from './About';
 import Contact from './Contact';
 import NoMatch from './NoMatch';
+import Gallery from './Gallery';
 
 export {
   Home,
-  Gallery,
+  Main,
   About,
   Contact,
   NoMatch,
+  Gallery,
 };

@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { Home, About, Contact, NoMatch, Gallery } from "./pages";
+import { Home, About, Contact, NoMatch, Main, Gallery } from "./pages";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
 import "./App.css";
@@ -25,39 +25,28 @@ function App() {
       <CssBaseline />
       <Router>
         <div>
-          {/* CHECKING IF CURRENT PATH IS HOMEPAGE FOR STYLIZED FEEL */}
-          {/* NAV route to display the Nav everywhere but the '/' path */}
-          <Route
-            path='/'
-            render={props => {
-              return props.location.pathname === "/" ? null : (
-                <Nav {...props} />
-              );
-            }}
-          />
+            <Route
+              path='/'
+              render={props => {
+                return props.location.pathname === "/" ? null : (
+                  <Nav {...props} />
+                );
+              }}
+            />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/gallery' component={Main} />
             <Route
-              path='/gallery'
+              exact
+              path='/gallery/:collectionParam'
               render={props => {
-                let pathArr = props.location.pathname.split("/");
-                let reqCollection = pathArr[2] || null;
-
-                if (pathArr.length <= 4) {
-                  if (reqCollection) {
-                    let isCollection = currentCollections.includes(
-                      reqCollection
-                    );
-                    if (isCollection) {
-                      return <Gallery {...props} />;
-                    } else {
-                      return <Redirect to='/gallery' {...props} />;
-                    }
-                  }
+                let isCollection = currentCollections.includes(
+                  props.match.params.collectionParam
+                );
+                if (isCollection) {
                   return <Gallery {...props} />;
-                } else {
-                  return <Redirect to='/gallery' {...props} />;
                 }
+                return <Redirect to='/gallery' {...props} />;
               }}
             />
             <Route exact path='/about' component={About} />
