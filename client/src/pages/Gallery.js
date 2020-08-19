@@ -1,126 +1,147 @@
-// import React, { useEffect, useState, createContext } from "react";
-// import { Route, Switch, Redirect } from "react-router-dom";
-// import Grid from "@material-ui/core/Grid";
-// import Card from "@material-ui/core/Card";
-// import Box from "@material-ui/core/Box";
-// import Container from "@material-ui/core/Container";
-// import { GalleryNavDetail } from "../components/NavDetails";
-// import { Divider } from "@material-ui/core";
-// import AtAGlance from "../components/AtAGlance";
-// import Collection from "../components/Collection";
-// import DetailNav from "../components/DetailNav";
-// import Detail from "../components/Detail";
-// import API from "../utils/API";
+import React, { useEffect, useState } from "react";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import { GalleryNavDetail } from "../components/NavDetails";
+import { Divider } from "@material-ui/core";
+import AtAGlance from "../components/AtAGlance";
+import Collection from "../components/Collection";
+import DetailNav from "../components/DetailNav";
+import Detail from "../components/Detail";
+import API from "../utils/API";
+import GalleryContext from "../utils/GalleryContext";
+import CollectionContext from "../utils/CollectionContext";
+import DetailContext from "../utils/DetailContext";
 
-// const collections = ["cards", "watercolor", "pastels", "portraits", "other"];
+const currentCollections = [
+  "cards",
+  "watercolor",
+  "pastels",
+  "portraits",
+  "other",
+];
 
-// const Gallery = ({ match, location }) => {
-//   const [galleryState, setGalleryState] = useState({
-//     subPage: "",
-//     galleryData: [],
-//     collection: "",
-//     collectionData: [],
-//     detailIndex: 0,
-//   });
+const Gallery = props => {
+  const [gallery, setGallery] = useState([]);
 
-//   // NO matter when someone requests a gallery route, load all the data only once and set it to the state
-//   // object for all gallery data
-//   useEffect(() => {
-//     console.log("GALLERY: useEffect()");
-//     console.log(location);
-//     updateGallery();
-//   }, []);
+  const [collections, setCollections] = useState([]);
+  const [collection, setCollection] = useState("");
 
-//   const updateGallery = () => {
-//     if (galleryState.galleryData.length === 0) {
-//       API.getAll().then(res => {
-//         setGalleryState({
-//           ...galleryState,
-//           galleryData: res.data,
-//         });
-//       });
-//     } else if ("") {
-//     }
-//   };
+  const [showDetail, setShowDetail] = useState(false);
+  const [detail, setDetail] = useState({});
+  const [detailIndex, setDetailIndex] = useState(0);
 
-//   const filterCollection = collection => {
-//     let updateCollection = galleryState.galleryData.filter(
-//       art => art.medium === collection
-//     );
-//     setGalleryState({
-//       ...galleryState,
-//       collectionData: updateCollection,
-//       collection,
-//     });
-//   };
+  useEffect(() => {
+    let pathArr = props.location.pathname.split("/");
+    let reqCollection = pathArr[2] || null;
+    let reqDetail = pathArr[3] || null;
+    setShowDetail(false);
 
-//   const updateDetail = index => {
-//     setGalleryState({
-//       ...galleryState,
-//       detailIndex: index,
-//     });
-//   };
+    API.getAll().then(res => {
+      setGallery(res.data);
 
-//   return (
-//     <Container maxWidth='xl'>
-//       <Divider />
-//       <Grid container spacing={0}>
-//         <Grid item md={2}>
-//           {/*  hide on screens smaller than md */}
-//           <Box border={2} display={{ xs: "none", md: "block" }}>
-//             <Card style={{ height: "100%" }} square={true} elevation={0}>
-//               <GalleryNavDetail />
-//               {location.pathname.split("/").length >= 4 ? <DetailNav /> : null}
-//             </Card>
-//           </Box>
-//         </Grid>
-//         <Grid item xs={12} md={10}>
-//           <Box border={2}>
-//             <Card style={{ height: "100%" }} square={true} elevation={0}>
-//               <Switch>
-//                 <Route
-//                   exact
-//                   path={`${match.path}/:collection/:id`}
-//                   render={props => {
-//                     return (
-//                       <GalleryContext.Provider value={galleryState}>
-//                         <Detail
-//                           {...props}
-//                           filterCollection={filterCollection}
-//                           updateDetail={updateDetail}
-//                         />
-//                       </GalleryContext.Provider>
-//                     );
-//                   }}
-//                 />
-//                 <Route
-//                   exact
-//                   path={`${match.path}/:collection`}
-//                   render={props => {
-//                     let isCollection = collections.includes(
-//                       props.match.params.collection
-//                     );
-//                     return isCollection ? (
-//                       <GalleryContext.Provider value={galleryState}>
-//                         <Collection
-//                           updateDetail={updateDetail}
-//                           filterCollection={filterCollection}
-//                           {...props}
-//                         />
-//                       </GalleryContext.Provider>
-//                     ) : (
-//                       <Redirect to='/gallery' />
-//                     );
-//                   }}
-//                 />
-//                 <Route exact path={match.path} component={AtAGlance} />
-//               </Switch>
-//             </Card>
-//           </Box>
-//         </Grid>
-//       </Grid>
-//     </Container>
-//   );
-// };
+      if (reqCollection && currentCollections.includes(reqCollection)) {
+        setCollections([]);
+        setCollection(reqCollection);
+        const newCollections = res.data.filter(
+          data => data.medium === reqCollection
+        );
+        setCollections(newCollections);
+      }
 
-// export default Gallery;
+      if (reqDetail) {
+        API.getOne(reqDetail).then(res => {
+          setDetail(res.data);
+          setShowDetail(true);
+        });
+      }
+    });
+  }, [props.location]);
+
+  const nextDetail = detailIndex => {
+    if (detailIndex >= collections.length) {
+      detailIndex = 0;
+    }
+    setDetail(collections[detailIndex]);
+    setDetailIndex(detailIndex);
+    window.history.pushState(`test`, 'test', `/gallery/${collection}/${collections[detailIndex]._id}`)
+  };
+
+  const previousDetail = detailIndex => {
+    if (detailIndex < 0) {
+      detailIndex = collections.length - 1;
+    }
+    setDetail(collections[detailIndex]);
+    setDetailIndex(detailIndex);
+    window.history.pushState(`test`, 'test', `/gallery/${collection}/${collections[detailIndex]._id}`)
+
+  };
+
+  const handleChangeDetail = event => {
+    console.log(event)
+    const btnName = event.target.getAttribute("data-value");
+    if (btnName === "next") {
+      const newDetailIndex = detailIndex + 1;
+      nextDetail(newDetailIndex);
+    } else {
+      const newDetailIndex = detailIndex - 1;
+      previousDetail(newDetailIndex);
+    }
+  };
+
+  const handleChangeCollection = collection => {
+    if (currentCollections.includes(collection)) {
+      setCollection(collection);
+      const newCollections = gallery.filter(data => data.medium === collection);
+      setCollections(newCollections);
+      console.log(newCollections);
+    } else {
+      props.history.push("/gallery");
+    }
+  };
+
+  let pathArr = props.location.pathname.split("/");
+  let isAtAGlance = pathArr.length === 2;
+  let reqCollection = pathArr[2] || null;
+
+  return (
+    <GalleryContext.Provider value={{ gallery }}>
+      <CollectionContext.Provider
+        value={{ collection, collections, handleChangeCollection }}>
+        <DetailContext.Provider value={{ detail, handleChangeDetail }}>
+          <Container maxWidth='xl'>
+            <Divider />
+            <Grid container spacing={0}>
+              <Grid item md={2}>
+                {/*  hide on screens smaller than md */}
+                <Box border={2} display={{ xs: "none", md: "block" }}>
+                  <Card style={{ height: "100%" }} square={true} elevation={0}>
+                    <GalleryNavDetail />
+                    {showDetail ? <DetailNav /> : null}
+                  </Card>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={10}>
+                <Box border={2}>
+                  <Card style={{ height: "100%" }} square={true} elevation={0}>
+                    {showDetail ? <Detail /> : <div></div>}
+                    {reqCollection && !showDetail ? (
+                      <Collection {...props} />
+                    ) : isAtAGlance ? (
+                      <AtAGlance />
+                    ) : (
+                      <div></div>
+                    )}
+                  </Card>
+                </Box>
+              </Grid>
+            </Grid>
+          </Container>
+        </DetailContext.Provider>
+      </CollectionContext.Provider>
+    </GalleryContext.Provider>
+  );
+};
+
+export default Gallery;

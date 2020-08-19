@@ -27,7 +27,6 @@ const Collection = ({ match }) => {
   );
 
   const handleOnClick = (_id, index) => {
-    console.log(match);
     history.push(`${match.url}/${collection}/${_id}`);
   };
 

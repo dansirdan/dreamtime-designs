@@ -5,7 +5,7 @@ const DetailNav = () => {
   // const { collection, collectionData, detailIndex } = useContext(
   //   GalleryContext
   // );
-  const {detail} = useContext(DetailContext);
+  const {detail, handleChangeDetail } = useContext(DetailContext);
 
 
   return (
@@ -16,6 +16,13 @@ const DetailNav = () => {
           <li>Title: {detail.title}</li>
           <li>Description: {detail.description}</li>
           <li>Size:{detail.size}</li>
+          <button onClick={handleChangeDetail} data-value={'next'}>
+            NEXT
+          </button>
+          <button onClick={handleChangeDetail} className={'data-value-next'}>
+            BACK
+          </button>
+
         </ul>
       ) : (
         "loading"

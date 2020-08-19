@@ -5,12 +5,19 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { Home, About, Contact, NoMatch } from "./pages";
-import TestGallery from "./pages/TestGallery";
-// import Gallery from "./pages/Gallery";
+import { Home, About, Contact, NoMatch, Gallery } from "./pages";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
 import "./App.css";
+
+// Array of art mediums, so that artist may add more in the future
+const currentCollections = [
+  "cards",
+  "watercolor",
+  "pastels",
+  "portraits",
+  "other",
+];
 
 function App() {
   return (
@@ -22,8 +29,10 @@ function App() {
           {/* NAV route to display the Nav everywhere but the '/' path */}
           <Route
             path='/'
-            render={(props) => {
-              return props.location.pathname === "/" ? null : <Nav {...props}/>;
+            render={props => {
+              return props.location.pathname === "/" ? null : (
+                <Nav {...props} />
+              );
             }}
           />
           <Switch>
@@ -32,11 +41,23 @@ function App() {
               path='/gallery'
               render={props => {
                 let pathArr = props.location.pathname.split("/");
-                return pathArr.length > 4 ? (
-                  <Redirect to='/gallery' {...props} />
-                ) : (
-                  <TestGallery {...props} />
-                );
+                let reqCollection = pathArr[2] || null;
+
+                if (pathArr.length <= 4) {
+                  if (reqCollection) {
+                    let isCollection = currentCollections.includes(
+                      reqCollection
+                    );
+                    if (isCollection) {
+                      return <Gallery {...props} />;
+                    } else {
+                      return <Redirect to='/gallery' {...props} />;
+                    }
+                  }
+                  return <Gallery {...props} />;
+                } else {
+                  return <Redirect to='/gallery' {...props} />;
+                }
               }}
             />
             <Route exact path='/about' component={About} />
