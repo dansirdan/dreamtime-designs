@@ -43,7 +43,7 @@ const Collection = props => {
           </GridList>
         </div>
       ) : (
-        <CircularProgress color="blue" />
+        <CircularProgress color="primary" />
       )}
     </div>
   );
