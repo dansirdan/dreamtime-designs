@@ -6,5 +6,8 @@ export default {
   },
   getOne: function (id) {
     return axios.get('/api/art/' + id)
+  },
+  getLatest: function () {
+    return axios.get('/api/art/latest');
   }
 }

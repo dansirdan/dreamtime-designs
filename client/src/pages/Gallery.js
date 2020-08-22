@@ -66,6 +66,7 @@ const Gallery = () => {
     <GalleryContainer detail={showDetail}>
       <Collection
         loading={loading}
+        collection={collectionParam}
         handleToggleDetail={handleToggleDetail}
         collections={collections}
       />

@@ -10,21 +10,12 @@ const GalleryContainer = props => {
   return (
     <Grid container spacing={0}>
       <Grid item md={2}>
-        <Box border={2} display={{ xs: "none", md: "block" }}>
-          <Card style={{ height: "100%" }} square={true} elevation={0}>
-            <GalleryNavDetail />
-          </Card>
+        <Box display={{ xs: "none", md: "block" }}>
+          <GalleryNavDetail />
         </Box>
       </Grid>
       <Grid item xs={12} md={10}>
-        <Container maxWidth='xl'>
-          <Divider />
-          <Box border={2}>
-            <Card style={{ height: "100%" }} square={true} elevation={0}>
-              {props.children}
-            </Card>
-          </Box>
-        </Container>
+        <Container maxWidth='xl'>{props.children}</Container>
       </Grid>
     </Grid>
   );

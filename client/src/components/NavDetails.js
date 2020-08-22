@@ -2,6 +2,7 @@ import React from "react";
 import List from "@material-ui/core/List";
 import { ListItemLink } from "./ListItemLink";
 import Divider from "@material-ui/core/Divider";
+import currentCollections from "../utils/currect_collections";
 
 // This can be cleaned up and made a little shorter
 // i.e. collections.map();
@@ -10,10 +11,9 @@ export const GalleryNavDetail = () => {
     <div>
       <List component='nav' aria-label='gallery nav'>
         <ListItemLink to='/gallery' primary='Main' />
-        <ListItemLink to='/gallery/cards' primary='Cards' />
-        <ListItemLink to='/gallery/watercolor' primary='Watercolor' />
-        <ListItemLink to='/gallery/pastels' primary='Pastels' />
-        <ListItemLink to='/gallery/portraits' primary='Portraits' />
+        {currentCollections.map((collection, index) => (
+          <ListItemLink key={index}to={`/gallery/${collection}`} primary={collection.charAt(0).toUpperCase() + collection.slice(1)} />
+        ))}
       </List>
     </div>
   );
@@ -27,10 +27,9 @@ export const SideNavDetail = () => {
         <Divider />
         <ListItemLink to='/gallery' primary='Gallery' />
         <Divider />
-        <ListItemLink to='/gallery/cards' primary='Cards' />
-        <ListItemLink to='/gallery/watercolor' primary='Watercolor' />
-        <ListItemLink to='/gallery/pastels' primary='Pastels' />
-        <ListItemLink to='/gallery/portraits' primary='Portraits' />
+        {currentCollections.map((collection, index) => (
+          <ListItemLink key={index}to={`/gallery/${collection}`} primary={collection.charAt(0).toUpperCase() + collection.slice(1)} />
+        ))}
         <Divider />
         <ListItemLink to='/about' primary='About' />
         <Divider />

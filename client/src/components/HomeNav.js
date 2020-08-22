@@ -13,6 +13,7 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    maxHeight: '20vh'
   },
   title: {
     textDecoration: "none",

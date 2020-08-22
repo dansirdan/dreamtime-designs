@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
   },
   pages: {
-    padding: theme.spacing(1),
     [theme.breakpoints.up("md")]: {
       textAlign: "center",
     },
@@ -35,7 +34,7 @@ const useStyles = makeStyles(theme => ({
 const NavLinks = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
+    <Grid container item justify='center' xs={6}>
       <Grid item xs={2}>
         <Box display={{ xs: "none", md: "block" }}>
           <Link to='/gallery' style={{ textDecoration: "none" }}>
@@ -57,7 +56,7 @@ const NavLinks = () => {
           </Link>
         </Box>
       </Grid>
-    </React.Fragment>
+    </Grid>
   );
 };
 
@@ -80,14 +79,13 @@ const NavBar = () => {
         <Grid item xs={11} md={12}>
           <Link to='/' style={{ textDecoration: "none" }}>
             <Typography variant='h1' className={classes.title}>
-              Melony Mont-Eton
+              Dreamtime Designs
             </Typography>
           </Link>
         </Grid>
       </Grid>
-      <Grid container item justify='center' xs={6}>
-        <NavLinks />
-      </Grid>
+
+      <NavLinks />
     </Grid>
   );
 };

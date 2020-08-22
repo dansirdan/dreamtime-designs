@@ -8,16 +8,8 @@ import {
 import { Home, About, Contact, NoMatch, Main, Gallery } from "./pages";
 import { CssBaseline } from "@material-ui/core";
 import Nav from "./components/Nav";
+import currentCollections from "./utils/currect_collections";
 import "./App.css";
-
-// Array of art mediums, so that artist may add more in the future
-const currentCollections = [
-  "cards",
-  "watercolor",
-  "pastels",
-  "portraits",
-  "other",
-];
 
 function App() {
   return (

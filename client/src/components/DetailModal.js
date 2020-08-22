@@ -5,6 +5,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import DetailNav from "./DetailNav";
 import Detail from "./Detail";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -15,8 +16,8 @@ const useStyles = makeStyles(theme => ({
   paper: {
     width: "80%",
     backgroundColor: theme.palette.background.paper,
-    justifyContent: "center",
     padding: theme.spacing(5),
+    outline: "none",
   },
 }));
 
@@ -39,9 +40,18 @@ const DetailModal = props => {
       }}>
       <Fade in={showDetail}>
         <div className={classes.paper}>
-          <Detail {...props}/>
-          <DetailNav {...props}/>
-        </div>
+        <Grid
+        container
+          direction='column'
+          justify='center'
+          alignItems='center'
+          >
+          <Grid item xs={12}>
+            <Detail {...props} />
+          </Grid>
+        </Grid>
+            <DetailNav {...props} />
+            </div>
       </Fade>
     </Modal>
   );

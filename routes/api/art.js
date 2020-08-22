@@ -2,10 +2,10 @@ const router = require("express").Router();
 const artController = require("../../controllers/artController");
 
 // Matches with "/api/art"
-router.route("/")
-  .get(artController.findAll)
-  .post(artController.create);
+router.route("/").get(artController.findAll).post(artController.create);
 
+// Matches with "/api/art/latest"
+router.route("/latest").get(artController.findOne);
 // Matches with "/api/art/:id"
 router
   .route("/:id")

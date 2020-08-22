@@ -4,7 +4,7 @@ const Detail = ({detail}) => {
 
   return (
       <img
-        style={{maxWidth: "100%", maxHeight: "80%"}}
+        style={{width: "100%", height:'auto'}}
         src={detail.path}
         alt={detail.title}
       />
