@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import SideNav from "./SideNav";
+import { ListItemLink } from "./ListItemLink";
 import Box from "@material-ui/core/Box";
+import AppBar from "@material-ui/core/AppBar";
+import ToolBar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    boxShadow: 'none'
   },
   title: {
     textDecoration: "none",
@@ -32,28 +36,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavLinks = () => {
-  const classes = useStyles();
   return (
-    <Grid container item justify='center' xs={6}>
-      <Grid item xs={2}>
+    <Grid container >
+      <Grid item>
         <Box display={{ xs: "none", md: "block" }}>
-          <Link to='/gallery' style={{ textDecoration: "none" }}>
-            <Typography className={classes.pages}>Gallery</Typography>
-          </Link>
+          <ListItemLink to='/gallery' primary='Gallery' />
         </Box>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item>
         <Box display={{ xs: "none", md: "block" }}>
-          <Link to='/about' style={{ textDecoration: "none" }}>
-            <Typography className={classes.pages}>About</Typography>
-          </Link>
+          <ListItemLink to='/about' primary='About' />
         </Box>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item>
         <Box display={{ xs: "none", md: "block" }}>
-          <Link to='/contact' style={{ textDecoration: "none" }}>
-            <Typography className={classes.pages}>Contact</Typography>
-          </Link>
+          <ListItemLink to='/contact' primary='Contact' />
         </Box>
       </Grid>
     </Grid>
@@ -64,29 +61,25 @@ const NavBar = () => {
   const classes = useStyles();
 
   return (
-    <Grid
-      container
-      alignItems='center'
-      justify='center'
-      spacing={0}
-      className={classes.root}>
-      <Grid container item justify='center' xs={12}>
-        <Grid item xs={1} md={false}>
-          <Box display={{ xs: "inline", md: "none" }}>
-            <SideNav />
-          </Box>
+    <AppBar position='static' color='inherit' className={classes.root}>
+      <ToolBar disableGutters>
+        <Box display={{ xs: "inline", md: "none" }}>
+          <SideNav />
+        </Box>
+        <Grid container spacing={0} justify='center' className={classes.root}>
+          <Grid item xs={12}>
+            <Link to='/' style={{ textDecoration: "none" }}>
+              <Typography variant='h1' className={classes.title}>
+                Dream Time Designs
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid item>
+            <NavLinks />
+          </Grid>
         </Grid>
-        <Grid item xs={11} md={12}>
-          <Link to='/' style={{ textDecoration: "none" }}>
-            <Typography variant='h1' className={classes.title}>
-              Dreamtime Designs
-            </Typography>
-          </Link>
-        </Grid>
-      </Grid>
-
-      <NavLinks />
-    </Grid>
+      </ToolBar>
+    </AppBar>
   );
 };
 

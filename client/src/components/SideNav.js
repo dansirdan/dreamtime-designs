@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   menuButton: {
-    marginRight: theme.spacing(5),
+    // marginRight: theme.spacing(5),
   },
 }));
 
@@ -33,7 +33,7 @@ export default function TemporaryDrawer() {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <IconButton
         edge={false}
         className={classes.menuButton}
@@ -51,6 +51,6 @@ export default function TemporaryDrawer() {
           <SideNavDetail />
         </div>
       </Drawer>
-    </div>
+    </React.Fragment>
   );
 }

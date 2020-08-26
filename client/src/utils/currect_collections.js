@@ -1,9 +1,9 @@
 const currentCollections = [
-  "cards",
   "watercolor",
   "pastels",
+  "acrylics",
   "portraits",
-  "other",
+  "cards",
 ];
 
 export default currentCollections;

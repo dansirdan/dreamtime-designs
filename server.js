@@ -17,13 +17,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Mongo DB connection
-// Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamtimedesigns", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   });
 
-// npm start
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

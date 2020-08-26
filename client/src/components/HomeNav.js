@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { ListItemLink } from "./ListItemLink";
 import {
   createMuiTheme,
   ThemeProvider,
@@ -13,7 +14,7 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    maxHeight: '20vh'
+    maxHeight: "20vh",
   },
   title: {
     textDecoration: "none",
@@ -29,39 +30,28 @@ const useStyles = makeStyles(theme => ({
   pages: {
     textAlign: "left",
     color: theme.palette.text.secondary,
-    padding: theme.spacing(2),
+    // padding: theme.spacing(2),
   },
-  navs: {
-
-  }
+  navs: {},
 }));
 
 const NavLinks = () => {
-  const classes = useStyles();
   return (
-    <React.Fragment>
-      <Grid item xs={3}>
-        <Link to='/gallery' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>Gallery</Typography>
-        </Link>
+    <Grid container>
+      <Grid item>
+        <ListItemLink to='/gallery' primary='Gallery' />
       </Grid>
-      <Grid item xs={3}>
-        <Link to='/about' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>About</Typography>
-        </Link>
+      <Grid item>
+        <ListItemLink to='/about' primary='About' />
       </Grid>
-      <Grid item xs={3}>
-        <Link to='/contact' style={{ textDecoration: "none" }}>
-          <Typography className={classes.pages}>Contact</Typography>
-        </Link>
+      <Grid item>
+        <ListItemLink to='/contact' primary='Contact' />
       </Grid>
-    </React.Fragment>
+    </Grid>
   );
 };
 
 const MainNav = () => {
-  // const theme = useTheme();
-  //   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
 
   return (

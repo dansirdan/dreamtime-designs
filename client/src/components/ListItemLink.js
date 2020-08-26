@@ -19,8 +19,8 @@ export const ListItemLink = props => {
 
   return (
 
-      <ListItem button component={renderLink}>
-        <ListItemText primary={primary} />
+      <ListItem button component={renderLink} >
+        <ListItemText primary={primary} {...props}/>
         {icon === "close" ? (
           <ListItemSecondaryAcrion>
             <IconButton edge='end' aria-label='close'>

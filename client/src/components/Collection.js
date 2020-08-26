@@ -29,7 +29,7 @@ const Collection = props => {
             justify='flex-start'
             alignItems='flex-start'
             direction='column'
-            spacing={3}>
+            >
             <Grid item xs={12}>
               <Typography
                 variant='h2'

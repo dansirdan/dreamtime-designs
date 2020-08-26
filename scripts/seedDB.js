@@ -9,7 +9,11 @@ mongoose.connect(
 );
 
 const artSeed = [];
-const mediums = ["cards", "watercolor", "pastels", "portraits", "other"];
+const mediums = [  "watercolor",
+"pastels",
+"acrylics",
+"portraits",
+"cards"];
 
 for (let i = 0; i < 10; i++) {
 

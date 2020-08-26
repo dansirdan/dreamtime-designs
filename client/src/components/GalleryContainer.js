@@ -4,13 +4,12 @@ import Card from "@material-ui/core/Card";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import { GalleryNavDetail } from "../components/NavDetails";
-import { Divider } from "@material-ui/core";
 
 const GalleryContainer = props => {
   return (
     <Grid container spacing={0}>
       <Grid item md={2}>
-        <Box display={{ xs: "none", md: "block" }}>
+        <Box style={{height: "100%", backgroundColor:"white"}} display={{ xs: "none", md: "block" }}>
           <GalleryNavDetail />
         </Box>
       </Grid>
