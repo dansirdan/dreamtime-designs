@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import currentCollections from "./utils/currect_collections";
 import "./App.css";
 import Wrapper from "./components/Wrapper";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -51,10 +52,10 @@ function App() {
             render={props => {
               return props.location.pathname === "/" ? null : (
                 // TODO: Create Footer component
-                // - Copyright
-                // - year
+                // - Copyright 
+                // - year 
                 // - links to social content
-                <div className='footer'>This is a footer</div>
+                <Footer/>
               );
             }}
           />

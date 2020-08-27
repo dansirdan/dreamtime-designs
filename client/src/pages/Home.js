@@ -13,18 +13,12 @@ const useStyles = makeStyles(theme => ({
     fontSize: "1rem",
     padding: theme.spacing(2),
   },
-  // div: {
-  //   padding: theme.spacing(2),
-  //   textAlign: "center",
-  //   color: theme.palette.text.secondary,
-  // },
 }));
 
 const MainContainer = () => {
   const classes = useStyles();
 
   return (
-    // <div className={classes.root}>
     <Grid container spacing={0}>
       <Grid item xs={12} md={6}>
         {/*  hide on screens smaller than md */}
@@ -59,7 +53,6 @@ const MainContainer = () => {
         </Grid>
       </Grid>
     </Grid>
-    // </div>
   );
 };
 

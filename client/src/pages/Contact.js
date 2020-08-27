@@ -19,7 +19,7 @@ const Contact = () => {
   const matchesMD = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='lg' style={{ height: "100%", flexGrow: 1 }}>
       <Grid
         direction={matchesMD ? "row" : "column-reverse"}
         container

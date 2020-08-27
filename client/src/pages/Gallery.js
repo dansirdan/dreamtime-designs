@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
-import GalleryContainer from "../components/GalleryContainer";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Collection from "../components/Collection";
 import DetailModal from "../components/DetailModal";
 
 const Gallery = () => {
   const { collectionParam } = useParams();
   const [collections, setCollections] = useState([]);
-  
-  const [loading, setLoading] = useState(true)
+
+  const [loading, setLoading] = useState(true);
 
   const [detail, setDetail] = useState({});
   const [detailIndex, setDetailIndex] = useState(0);
@@ -18,7 +17,7 @@ const Gallery = () => {
   useEffect(() => {
     API.getAll(collectionParam).then(res => {
       setCollections(res.data);
-      setLoading(true)
+      setLoading(true);
     });
   }, [collectionParam]);
 
@@ -42,7 +41,7 @@ const Gallery = () => {
     const btnName = parseInt(event.target.getAttribute("data-value"));
     if (btnName === "next") {
       const newDetailIndex = detailIndex + 1;
-      console.log(newDetailIndex)
+      console.log(newDetailIndex);
       nextDetail(newDetailIndex);
     } else {
       const newDetailIndex = detailIndex - 1;
@@ -63,12 +62,12 @@ const Gallery = () => {
   };
 
   return (
-    <GalleryContainer detail={showDetail}>
+    <React.Fragment>
       <Collection
-        loading={loading}
         collection={collectionParam}
         handleToggleDetail={handleToggleDetail}
         collections={collections}
+        loading={loading}
       />
       <DetailModal
         showDetail={showDetail}
@@ -76,7 +75,7 @@ const Gallery = () => {
         detail={detail}
         handleChangeDetail={handleChangeDetail}
       />
-    </GalleryContainer>
+    </React.Fragment>
   );
 };
 

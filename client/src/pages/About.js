@@ -7,10 +7,10 @@ import Box from "@material-ui/core/Box";
 
 const About = () => {
   return (
-    <Container maxWidth='lg'>
-      <Grid container spacing={0} style={{marginTop: "20px"}}>
+    <Container maxWidth='lg' style={{ height: "100%", flexGrow: 1 }}>
+      <Grid container spacing={0} style={{marginTop: "20px", height: "100%"}}>
         <Grid item xs={12} md={6}>
-          <Card style={{ height: "80vh" }} square={true} elevation={0}>
+          <Card square={true} elevation={0}>
             <CardMedia
               style={{ height: "100%" }}
               image='images/1.jpg'

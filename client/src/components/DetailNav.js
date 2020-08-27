@@ -1,19 +1,45 @@
 import React from "react";
+import { NavigateNext, NavigateBefore } from "@material-ui/icons";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
 
 const DetailNav = ({ detail, handleChangeDetail }) => {
   return (
-    <React.Fragment>
-      <p>Collection: {detail._id}</p>
-      <p>Title: {detail.title}</p>
-      <p>Description: {detail.description}</p>
-      <p>Size:{detail.size}</p>
-      <button onClick={handleChangeDetail} data-value={"next"}>
-        NEXT
-      </button>
-      <button onClick={handleChangeDetail} data-value={"prev"}>
-        BACK
-      </button>
-    </React.Fragment>
+    <Grid container>
+      <Grid
+        container
+        item
+        xs={12}
+        direction='row'
+        alignItems='center'
+        justify='center'>
+        <IconButton
+          edge='start'
+          onClick={handleChangeDetail}
+          data-value={"next"}
+          color='inherit'
+          size='medium'
+          aria-label='close'>
+          <NavigateBefore fontSize='large' />
+        </IconButton>
+        <Typography variant='overline' style={{fontSize: "1rem"}}>Previous / Next</Typography>
+        <IconButton
+          edge='end'
+          onClick={handleChangeDetail}
+          data-value={"prev"}
+          color='inherit'
+          size='medium'
+          aria-label='close'>
+          <NavigateNext fontSize='large' />
+        </IconButton>
+      </Grid>
+      <Grid item container direction='column' justify='flex-start' xs={12}>
+      <Typography variant='overline' >Title: "{detail.title}"</Typography>
+      <Typography variant='overline'>Medium: {detail.medium}</Typography>
+      <Typography variant='overline'>Size: {detail.size}</Typography>
+      </Grid>
+    </Grid>
   );
 };
 
