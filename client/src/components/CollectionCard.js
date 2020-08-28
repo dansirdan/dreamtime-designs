@@ -36,7 +36,7 @@ export default function ImgMediaCard({collection}) {
           component="img"
           alt={procCollection}
           height="250"
-          image="/images/1.jpg"
+          image="/images/0.jpg"
           title={procCollection}
         />
         <CardContent>

@@ -24,7 +24,7 @@ for (let i = 0; i < 10; i++) {
     medium: mediums[rng],
     size: "4x5",
     description: "Lorem Ipsum",
-    path: "/images/1.jpg"
+    path: "/images/0.jpg"
   })
 }
 

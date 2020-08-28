@@ -110,7 +110,7 @@ const Contact = () => {
         <Grid container item md={6} xs={12}>
           <Grid item xs={12}>
             <img 
-            style={{width: "100%", maxHeight: 500}} src='images/1.jpg'
+            style={{width: "100%", maxHeight: 500}} src='images/0.jpg'
             alt='test'/>
           </Grid>
         </Grid>
