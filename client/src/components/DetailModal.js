@@ -20,9 +20,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(5),
     outline: "none",
-    [theme.breakpoints.up("md")]: {
-      textAlign: "center",
-    },
+    textAlign: "center",
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(2),
       width: "100%",
@@ -67,8 +65,11 @@ const DetailModal = props => {
             <Grid item xs={12}>
               <Detail {...props} />
             </Grid>
-          </Grid>
+            <Grid item xs={12}>
           <DetailNav {...props} />
+
+            </Grid>
+          </Grid>
         </div>
       </Fade>
     </Modal>
