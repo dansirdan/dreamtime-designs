@@ -1,13 +1,19 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   getAll: function (medium) {
-    return axios.get('/api/art', {params: {medium}});
+    return axios.get("/api/art", { params: { medium } });
   },
   getOne: function (id) {
-    return axios.get('/api/art/' + id)
+    return axios.get("/api/art/" + id);
   },
   getLatest: function () {
-    return axios.get('/api/art/latest');
-  }
-}
+    return axios.get("/api/art/latest");
+  },
+  sendEmail: function (messageObj) {
+    return axios.post({
+      url: "/sendemail",
+      data: messageObj,
+    });
+  },
+};
