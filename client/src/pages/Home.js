@@ -6,6 +6,8 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import HomeNav from "../components/HomeNav";
+import Fade from "@material-ui/core/Fade";
+
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -20,6 +22,7 @@ const MainContainer = () => {
 
   return (
     <Grid container spacing={0}>
+      <Fade in={true}>
       <Grid item xs={12} md={6}>
         {/*  hide on screens smaller than md */}
         <Box display={{ xs: "none", md: "block" }}>
@@ -42,6 +45,7 @@ const MainContainer = () => {
           </Card>
         </Box>
       </Grid>
+        </Fade>
       <Grid container item xs={12} md={6}>
         <Grid item xs={12}>
           <Typography variant='h2' className={classes.title}>

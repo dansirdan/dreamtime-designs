@@ -40,7 +40,6 @@ const Main = () => {
 
   useEffect(() => {
     API.getLatest().then(res => {
-      console.log(res.data);
       setLatest(res.data);
       setLoading(true);
     });

@@ -28,6 +28,25 @@ export default function ImgMediaCard({collection}) {
   const history = useHistory();
   let procCollection = collection.charAt(0).toUpperCase() + collection.slice(1);
 
+  let path = '';
+
+  switch (collection) {
+    case "acrylics":
+      path= '/images/20.png';
+      break;
+    case "watercolor":
+      path= '/images/34.png';
+      break;
+    case "pastels":
+      path= '/images/13.png';
+      break;
+    case "portraits":
+      path= '/images/9.png';
+      break;
+    default:
+      path= "/images/0.jpg";
+      break;
+  }
 
   return (
     <Card className={classes.card}>
@@ -36,7 +55,7 @@ export default function ImgMediaCard({collection}) {
           component="img"
           alt={procCollection}
           height="250"
-          image="/images/0.jpg"
+          image={path}
           title={procCollection}
         />
         <CardContent>

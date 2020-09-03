@@ -11,8 +11,9 @@ export default {
     return axios.get("/api/art/latest");
   },
   sendEmail: function (messageObj) {
-    return axios.post({
-      url: "/sendemail",
+    return axios({
+      method: 'post',
+      url: "/api/sendemail",
       data: messageObj,
     });
   },
