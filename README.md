@@ -1,24 +1,42 @@
-# dreamtime-designs
-Artist Melony Mont-Eton's personal gallery site with Gallery, About, and Contact pages. The site will be fully responsive and made with React.  
+# Dreamtime Designs
+
+Explore the [project page](https://github.com/dansirdan/dreamtime-designs)
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+## About The Project
+
+Artist Melony Mont-Eton's personal gallery site with Gallery, About, and Contact pages. The site will be fully responsive and made with React.
+
+![Project Screenshot](client/public/images/dreamtime.gif)
+
+### Built With
+
+- React.js
+- Material-UI
+
+## Roadmap
+
+Currently no known issues, but track [open issues](https://github.com/dansirdan/dreamtime-designs/issues)
+
+## License
 
 MIT License
 
-Copyright (c) [2020] [Daniel Mont-Eton]
+Copyright (c) 2020 Daniel Mont-Eton
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Contact
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Twitter - [@DanielMont_Eton](https://twitter.com/DanielMont_Eton)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+LinkedIn - [LinkedIn](https://www.linkedin.com/in/daniel-mont-eton-43a81055/)
+
+CONTRIBUTIONS
+Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
