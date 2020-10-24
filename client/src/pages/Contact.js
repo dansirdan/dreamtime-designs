@@ -16,7 +16,7 @@ import Icon from "@material-ui/core/Icon";
 import API from "../utils/API";
 import Fade from "@material-ui/core/Fade";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   header: {
     textDecoration: "none",
     fontSize: "2rem",
@@ -44,7 +44,7 @@ const Contact = () => {
   const [reasonErr, setReasonErr] = useState(false);
   const [bodyErr, setBodyErr] = useState(false);
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     setMessage({
       ...message,
       [event.target.id]: event.target.value,
@@ -72,7 +72,7 @@ const Contact = () => {
     }
   };
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     if (message.firstname.length <= 0) {
@@ -109,12 +109,13 @@ const Contact = () => {
         email: message.email,
         reason: message.reason,
         message: message.body,
-      }).then(res => {
+      }).then((res) => {
         if (res.data.msg === "success") {
           alert("Message Sent.");
           resetForm();
         } else if (res.data.msg === "fail") {
           alert("Message failed to send.");
+          console.log(res.data.err);
         }
       });
     }
@@ -126,38 +127,42 @@ const Contact = () => {
 
   return (
     <Container
-      maxWidth='xl'
-      style={{ height: "100%", flexGrow: 1, padding: 20 }}>
+      maxWidth="xl"
+      style={{ height: "100%", flexGrow: 1, padding: 20 }}
+    >
       <Fade in={true}>
         <Grid
           direction={matchesMD ? "row" : "column-reverse"}
           container
-          spacing={4}>
+          spacing={4}
+        >
           <Grid
             container
-            alignItems='center'
-            justify='center'
+            alignItems="center"
+            justify="center"
             item
             md={6}
             xs={12}
-            >
+          >
             <form
-              id='email-form'
+              id="email-form"
               style={{ width: "80%" }}
               noValidate
-              autoComplete='off'
-              onSubmit={handleFormSubmit}>
-              <Grid direction='row' container spacing={2}>
+              autoComplete="off"
+              onSubmit={handleFormSubmit}
+            >
+              <Grid direction="row" container spacing={2}>
                 <Grid item xs={12}>
                   <Typography
-                    variant='h2'
-                    component='h3'
-                    className={classes.header}>
+                    variant="h2"
+                    component="h3"
+                    className={classes.header}
+                  >
                     Contact Form
                   </Typography>
                   <Divider />
                   <br />
-                  <Typography variant='body1'>
+                  <Typography variant="body1">
                     Melony Mont-Eton is available for commissions, sales, and
                     general inquries on her artwork. Please fill out the form
                     below and be sure to select the reason for your inquiry.
@@ -165,12 +170,12 @@ const Contact = () => {
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    margin='dense'
-                    size='small'
+                    margin="dense"
+                    size="small"
                     error={firstnameErr}
-                    id='firstname'
-                    label='First Name'
-                    placeholder='Sara'
+                    id="firstname"
+                    label="First Name"
+                    placeholder="Sara"
                     helperText={
                       firstnameErr ? "Please enter your first name." : " "
                     }
@@ -179,17 +184,17 @@ const Contact = () => {
                     InputLabelProps={{
                       shrink: true,
                     }}
-                    variant='outlined'
+                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={6}>
                   <TextField
-                    margin='dense'
-                    size='small'
+                    margin="dense"
+                    size="small"
                     error={lastnameErr}
-                    id='lastname'
-                    label='Last name'
-                    placeholder='Smith'
+                    id="lastname"
+                    label="Last name"
+                    placeholder="Smith"
                     helperText={
                       lastnameErr ? "Please enter your last name." : " "
                     }
@@ -198,39 +203,40 @@ const Contact = () => {
                     InputLabelProps={{
                       shrink: true,
                     }}
-                    variant='outlined'
+                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    margin='dense'
-                    size='small'
+                    margin="dense"
+                    size="small"
                     error={emailErr}
-                    id='email'
-                    label='Email'
-                    placeholder='sara.smith@gmail.com'
+                    id="email"
+                    label="Email"
+                    placeholder="sara.smith@gmail.com"
                     helperText={emailErr ? "Please enter a valid email." : " "}
                     fullWidth
                     onChange={handleInputChange}
                     InputLabelProps={{
                       shrink: true,
                     }}
-                    variant='outlined'
+                    variant="outlined"
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <FormControl variant='outlined' error={reasonErr}>
-                    <InputLabel htmlFor='reason'>Reason for Inquiry</InputLabel>
+                  <FormControl variant="outlined" error={reasonErr}>
+                    <InputLabel htmlFor="reason">Reason for Inquiry</InputLabel>
                     <Select
                       native
-                      label='Reason for Inquiry'
+                      label="Reason for Inquiry"
                       value={message.reason}
                       onChange={handleInputChange}
                       inputProps={{
                         name: "reason-selector",
                         id: "reason",
-                      }}>
-                      <option aria-label='None' value='' />
+                      }}
+                    >
+                      <option aria-label="None" value="" />
                       <option value={"Portrait Commission"}>
                         Portrait Commission
                       </option>
@@ -244,12 +250,12 @@ const Contact = () => {
                 <Grid item xs={12}>
                   <TextField
                     rows={5}
-                    margin='dense'
-                    size='small'
+                    margin="dense"
+                    size="small"
                     error={bodyErr}
-                    id='body'
-                    label='Message'
-                    placeholder='Your message goes here...'
+                    id="body"
+                    label="Message"
+                    placeholder="Your message goes here..."
                     helperText={
                       bodyErr
                         ? "Please enter a message between 1 and 500 characters."
@@ -261,15 +267,16 @@ const Contact = () => {
                     InputLabelProps={{
                       shrink: true,
                     }}
-                    variant='outlined'
+                    variant="outlined"
                   />
                 </Grid>
-                <Grid container item justify='flex-end' alignItems='flex-end'>
+                <Grid container item justify="flex-end" alignItems="flex-end">
                   <Button
-                    type='submit'
-                    variant='contained'
-                    color='default'
-                    endIcon={<Icon>send</Icon>}>
+                    type="submit"
+                    variant="contained"
+                    color="default"
+                    endIcon={<Icon>send</Icon>}
+                  >
                     Send
                   </Button>
                 </Grid>
@@ -278,21 +285,23 @@ const Contact = () => {
           </Grid>
           <Grid
             container
-            alignItems='center'
-            justify='center'
+            alignItems="center"
+            justify="center"
             item
             md={6}
             xs={12}
-            style={{ flexGrow: 1 }}>
+            style={{ flexGrow: 1 }}
+          >
             <Grid item xs={12}>
               <Card
                 square={true}
                 elevation={0}
-                style={{ maxWidth: "60%", margin: "auto" }}>
+                style={{ maxWidth: "60%", margin: "auto" }}
+              >
                 <CardMedia
                   style={{ height: matchesMD ? "40vh" : "30vh" }}
-                  image='images/0.jpg'
-                  title='Stand In'
+                  image="images/0.jpg"
+                  title="Stand In"
                 />
               </Card>
             </Grid>

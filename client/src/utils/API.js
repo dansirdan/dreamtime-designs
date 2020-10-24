@@ -12,7 +12,7 @@ export default {
   },
   sendEmail: function (messageObj) {
     return axios({
-      method: 'post',
+      method: "POST",
       url: "/api/sendemail",
       data: messageObj,
     });

@@ -63,7 +63,10 @@ router.route("/").post((req, res, next) => {
 
   main()
     .then(() => res.json({ msg: "success" }))
-    .catch(() => res.json({ msg: "fail" }));
+    .catch((err) => {
+      console.log(err);
+      res.json({ msg: "fail", err: err });
+    });
   //   const mail = {
   //     from: name,
   //     to: "",
