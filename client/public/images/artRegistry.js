@@ -53,7 +53,7 @@ const gallery = [
   },
   {
     title: "Second Grandchild",
-    medium: ["portraits","birds-of-prey"],
+    medium: ["portraits"],
     size: '10 1/2" x 13 1/2"',
     path: "/images/8.png",
   },

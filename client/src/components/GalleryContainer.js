@@ -14,11 +14,17 @@ const GalleryContainer = props => {
           <GalleryNavDetail />
         </Box>
       </Grid>
-      <Grid item xs={12} md={10}>
+      <Grid item xs={12} md={10} lg={8}>
         <Container maxWidth='xl' style={{ padding: "20px" }}>
           {props.children}
         </Container>
       </Grid>
+      <Grid item md={1} lg={2}xs={false}>
+      <Box
+          style={{ height: "100%", backgroundColor: "white" }}
+          display={{ xs: "none", md: "block" }}>
+        </Box>
+        </Grid>
     </Grid>
   );
 };

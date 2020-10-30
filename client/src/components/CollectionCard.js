@@ -43,6 +43,12 @@ export default function ImgMediaCard({collection}) {
     case "portraits":
       path= '/images/portraitsSub.jpg';
       break;
+    case "birds-of-prey":
+      path= '/images/12.jpg';
+      break;
+    case "cats":
+      path= '/images/17.jpg';
+      break;
     default:
       path= "/images/0.jpg";
       break;

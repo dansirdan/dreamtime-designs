@@ -7,7 +7,8 @@ import { IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 export const ListItemLink = props => {
-  const { icon, primary, to } = props;
+  let { icon, primary, to } = props;
+  primary = primary.replace("Birds-of-prey", "Birds of Prey");
 
   const renderLink = React.useMemo(
     () =>
@@ -16,19 +17,17 @@ export const ListItemLink = props => {
       )),
     [to]
   );
-
+  
   return (
-
-      <ListItem button component={renderLink} >
-        <ListItemText primary={primary} {...props}/>
-        {icon === "close" ? (
-          <ListItemSecondaryAcrion>
-            <IconButton edge='end' aria-label='close'>
-              <CloseIcon />
-            </IconButton>
-          </ListItemSecondaryAcrion>
-        ) : null}
-      </ListItem>
-
+    <ListItem button component={renderLink}>
+      <ListItemText primary={primary} />
+      {icon === "close" ? (
+        <ListItemSecondaryAcrion>
+          <IconButton edge='end' aria-label='close'>
+            <CloseIcon />
+          </IconButton>
+        </ListItemSecondaryAcrion>
+      ) : null}
+    </ListItem>
   );
 };

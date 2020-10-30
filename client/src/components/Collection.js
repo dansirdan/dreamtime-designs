@@ -35,7 +35,7 @@ const Collection = props => {
           >
           <Grid item xs={12}>
             <Typography variant='h2' component='h3' className={classes.header}>
-              {procCollection}
+              {procCollection.replace("Birds-of-prey", "Birds of Prey")}
             </Typography>
             <Divider />
           </Grid>
@@ -60,8 +60,6 @@ const Collection = props => {
                     style={{
                       cursor: "pointer",
                       height: "auto",
-                      maxWidth: "600px",
-                      maxHeight: "60vh",
                     }}
                     image={tile.path}
                     alt={tile.title}

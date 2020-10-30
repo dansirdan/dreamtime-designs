@@ -35,8 +35,8 @@ const About = () => {
           <Grid item xs={12} md={6}>
             <Card square={true} elevation={0}>
               <CardMedia
-                style={{ height: "50vh" }}
-                image='images/0.jpg'
+                style={{ height: "70vh" }}
+                image='images/artist/about.jpg'
                 title='Stand In'
               />
             </Card>

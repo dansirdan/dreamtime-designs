@@ -5,8 +5,19 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 
 const DetailNav = ({ detail, handleChangeDetail }) => {
+let titleStr = " "
+  // detail.medium.length > 0 ? `${detail.medium[0].replace("Birds-of-prey", "Birds of Prey")}, ${detail.medium[1].replace("Birds-of-prey", "Birds of Prey")}` : detail.medium[0]
+  detail.medium.forEach((medium, ind)=> {
+    titleStr += (ind > 0 ? ", ": "") + medium.replace("birds-of-prey", "Birds of Prey");
+  })
+
   return (
     <Grid container>
+      <Grid item container direction='column' justify='flex-start' xs={12}>
+      <Typography variant='overline' >"{detail.title}"</Typography>
+      <Typography variant='overline'>{titleStr}</Typography>
+      <Typography variant='overline'>{detail.size}</Typography>
+      </Grid>
       <Grid
         container
         item
@@ -33,11 +44,6 @@ const DetailNav = ({ detail, handleChangeDetail }) => {
           aria-label='close'>
           <NavigateNext fontSize='large' />
         </IconButton>
-      </Grid>
-      <Grid item container direction='column' justify='flex-start' xs={12}>
-      <Typography variant='overline' >Title: "{detail.title}"</Typography>
-      <Typography variant='overline'>Medium: {detail.medium}</Typography>
-      <Typography variant='overline'>Size: {detail.size}</Typography>
       </Grid>
     </Grid>
   );

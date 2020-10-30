@@ -296,11 +296,11 @@ const Contact = () => {
               <Card
                 square={true}
                 elevation={0}
-                style={{ maxWidth: "60%", margin: "auto" }}
+                style={{ maxWidth: "80%", margin: "auto" }}
               >
                 <CardMedia
                   style={{ height: matchesMD ? "40vh" : "30vh" }}
-                  image="images/0.jpg"
+                  image="images/1.jpg"
                   title="Stand In"
                 />
               </Card>
