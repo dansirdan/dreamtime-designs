@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const artSchema = new Schema({
   title: { type: String, required: true },
-  medium: { type: String, required: true },
+  medium: { type: [String], required: true },
   size: { type: String, required: true },
   description: String,
   path: { type: String, required: true },

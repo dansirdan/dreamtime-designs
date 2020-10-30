@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   getAll: function (medium) {
-    return axios.get("/api/art", { params: { medium } });
+    return axios.get("/api/art", { params: {medium} });
   },
   getOne: function (id) {
     return axios.get("/api/art/" + id);
@@ -12,7 +12,7 @@ export default {
   },
   sendEmail: function (messageObj) {
     return axios({
-      method: 'post',
+      method: "post",
       url: "/api/sendemail",
       data: messageObj,
     });
