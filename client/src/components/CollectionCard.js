@@ -32,16 +32,16 @@ export default function ImgMediaCard({collection}) {
 
   switch (collection) {
     case "acrylics":
-      path= '/images/20.png';
+      path= '/images/20.jpg';
       break;
     case "watercolor":
-      path= '/images/34.png';
+      path= '/images/34.jpg';
       break;
     case "pastels":
-      path= '/images/13.png';
+      path= '/images/13.jpg';
       break;
     case "portraits":
-      path= '/images/9.png';
+      path= '/images/portraitsSub.jpg';
       break;
     default:
       path= "/images/0.jpg";

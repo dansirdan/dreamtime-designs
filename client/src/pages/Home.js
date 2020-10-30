@@ -29,7 +29,7 @@ const MainContainer = () => {
           <Card style={{ height: "100vh" }} square={true} elevation={0}>
             <CardMedia
               style={{ height: "100%" }}
-              image='images/1.png'
+              image='images/1.jpg'
               title='Stand In'
             />
           </Card>
@@ -39,7 +39,7 @@ const MainContainer = () => {
           <Card style={{ height: "50vh" }} square={true} elevation={0}>
             <CardMedia
               style={{ height: "100%" }}
-              image='images/1.png'
+              image='images/1.jpg'
               title='Stand In'
             />
           </Card>
