@@ -3,11 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   img: {
+    maxWidth: "100%",
     width: "auto",
     maxHeight: "calc(100vh - 300px)",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-    },
   }
 }));
 
