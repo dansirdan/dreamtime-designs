@@ -1,4 +1,4 @@
-# Dreamtime Designs
+# Dream Time Designs
 
 Explore the [project page](https://github.com/dansirdan/dreamtime-designs)
 
