@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const artSchema = new Schema({
+const gallerySchema = new Schema({
   title: { type: String, required: true },
   medium: { type: [String], required: true },
   size: { type: String, required: true },
@@ -10,6 +10,6 @@ const artSchema = new Schema({
   date: { type: Date, default: Date.now },
 });
 
-const Art = mongoose.model('Art', artSchema);
+const gallery = mongoose.model('gallery', gallerySchema);
 
-module.exports = Art;
+module.exports = gallery;

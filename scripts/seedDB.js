@@ -8,7 +8,7 @@ mongoose.connect(
   "mongodb://localhost/dreamtimedesigns"
 );
 
-const artSeed = [
+const gallerySeed = [
   {
     title: "Dreaming of Scotland",
     medium: ["watercolor"],
@@ -543,7 +543,7 @@ const artSeed = [
 
 //   let rng = Math.floor(Math.random() * mediums.length)
 
-//   artSeed.push( {
+//   gallerySeed.push( {
 //     title: "test" + 1,
 //     medium: mediums[rng],
 //     size: "4x5",
@@ -552,9 +552,9 @@ const artSeed = [
 //   })
 // }
 
-db.Art
+db.gallery
   .deleteMany({})
-  .then(() => db.Art.collection.insertMany(artSeed))
+  .then(() => db.gallery.collection.insertMany(gallerySeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

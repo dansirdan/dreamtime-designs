@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config()
+require("dotenv").config();
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
@@ -18,10 +18,15 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Mongo DB connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dreamtimedesigns", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  });
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/dreamtimedesigns",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

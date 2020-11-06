@@ -1,3 +1,3 @@
 module.exports = {
-    Art: require('./art')
+    gallery: require('./gallery')
 };
