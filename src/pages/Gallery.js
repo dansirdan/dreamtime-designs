@@ -15,33 +15,30 @@ const Gallery = () => {
   const [showDetail, setShowDetail] = useState(false);
 
   useEffect(() => {
-    API.getAll(collectionParam).then(res => {
-      setCollections(res.data);
-      setLoading(true);
-    });
+    const galleryArt = API.getAll(collectionParam);
+    setCollections(galleryArt);
+    setLoading(true);
   }, [collectionParam]);
 
-  const nextDetail = detailIndex => {
-    if (detailIndex >= collections.length) {
-      detailIndex = 0;
+  const nextDetail = incomingIndex => {
+    if (incomingIndex >= collections.length) {
+      incomingIndex = 0;
     }
-    setDetail(collections[detailIndex]);
-    setDetailIndex(detailIndex);
+    setDetail(collections[incomingIndex]);
+    setDetailIndex(incomingIndex);
   };
 
-  const previousDetail = detailIndex => {
-    if (detailIndex < 0) {
-      detailIndex = collections.length - 1;
+  const previousDetail = incomingIndex => {
+    if (incomingIndex < 0) {
+      incomingIndex = collections.length - 1;
     }
-    setDetail(collections[detailIndex]);
-    setDetailIndex(detailIndex);
+    setDetail(collections[incomingIndex]);
+    setDetailIndex(incomingIndex);
   };
 
-  const handleChangeDetail = event => {
-    const btnName = parseInt(event.target.getAttribute("data-value"));
-    if (btnName === "next") {
+  const handleChangeDetail = direction => {
+    if (direction === "next") {
       const newDetailIndex = detailIndex + 1;
-      console.log(newDetailIndex);
       nextDetail(newDetailIndex);
     } else {
       const newDetailIndex = detailIndex - 1;

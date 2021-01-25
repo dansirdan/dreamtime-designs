@@ -39,10 +39,8 @@ const Main = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    API.getLatest().then(res => {
-      setLatest(res.data);
-      setLoading(true);
-    });
+    setLatest(API.getLatest());
+    setLoading(true);
   }, []);
 
   return (

@@ -27,22 +27,20 @@ let titleStr = " "
         justify='center'>
         <IconButton
           edge='start'
-          onClick={handleChangeDetail}
-          data-value={"next"}
+          onClick={() => handleChangeDetail('prev')}
           color='inherit'
           size='medium'
-          aria-label='close'>
+          aria-label='previous'>
           <NavigateBefore fontSize='large' />
         </IconButton>
         <Typography variant='overline' style={{fontSize: "1rem"}}>Previous / Next</Typography>
         <IconButton
           edge='end'
-          onClick={handleChangeDetail}
-          data-value={"prev"}
+          onClick={() => handleChangeDetail('next')}
           color='inherit'
           size='medium'
-          aria-label='close'>
-          <NavigateNext fontSize='large' />
+          aria-label='next'>
+          <NavigateNext fontSize='large'/>
         </IconButton>
       </Grid>
     </Grid>

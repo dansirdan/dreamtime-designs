@@ -1,20 +1,17 @@
-import axios from "axios";
+import galleryDB from "../resources/galleryDB.json"
 
 export default {
   getAll: function (medium) {
-    return axios.get("/api/art", { params: {medium} });
+    console.log(galleryDB);
+    return galleryDB.filter(art => art.medium.includes(medium));
   },
   getOne: function (id) {
-    return axios.get("/api/art/" + id);
+    return console.log(id);
   },
   getLatest: function () {
-    return axios.get("/api/art/latest");
+    return galleryDB[galleryDB.length-1];
   },
   sendEmail: function (messageObj) {
-    return axios({
-      method: "post",
-      url: "/api/sendemail",
-      data: messageObj,
-    });
+    return console.log(messageObj);
   },
 };
