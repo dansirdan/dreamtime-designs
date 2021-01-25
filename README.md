@@ -15,7 +15,7 @@ Explore the [project page](https://github.com/dansirdan/dreamtime-designs)
 
 Artist Melony Mont-Eton's personal gallery site with Gallery, About, and Contact pages. The site will be fully responsive and made with React.
 
-![Project Screenshot](client/public/images/dreamtime.gif)
+![Project Screenshot](public/images/dreamtime.gif)
 
 ### Built With
 
