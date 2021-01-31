@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GalleryContainer from "../components/GalleryContainer";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActionArea from "@material-ui/core/CardActionArea";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import CollectionCard from "../components/CollectionCard";
@@ -14,7 +14,7 @@ import API from "../utils/API";
 import Fade from "@material-ui/core/Fade";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   header: {
     textDecoration: "none",
     fontSize: "2rem",
@@ -48,37 +48,42 @@ const Main = () => {
       <Fade in={loading}>
         <Grid
           container
-          justify='center'
+          justify="center"
           spacing={5}
-          alignContent='center'
-          style={{ height: "100%" }}>
+          alignContent="center"
+          style={{ height: "100%" }}
+        >
           <Grid item xs={12}>
-            <Typography variant='h2' component='h3' className={classes.header}>
+            <Typography variant="h2" component="h3" className={classes.header}>
               Latest Work
             </Typography>
             <Divider />
           </Grid>
           <Grid item xs={12}>
-            <Container maxWidth='md'>
+            <Container maxWidth="md">
               <Card square={true} elevation={0}>
-              <CardActionArea onClick={() => history.push(`/gallery/${latest.medium}`)}>
-                <CardMedia
-                  component='img'
-                  style={{
-                    height: "auto",
-                    maxWidth: "1000px",
-                    maxHeight: "66vh",
-                  }}
-                  image={latest.path}
-                  title={`latest work, click to go to ${latest.medium} gallery`}
-                />
+                <CardActionArea
+                  onClick={() => history.push(`/gallery/${latest.medium[0]}`)}
+                >
+                  <CardMedia
+                    component="img"
+                    style={{
+                      height: "auto",
+                      maxWidth: "1000px",
+                      maxHeight: "66vh",
+                    }}
+                    image={latest.path}
+                    title={`latest work, click to go to ${latest.medium} gallery`}
+                  />
                 </CardActionArea>
               </Card>
-                <Typography variant='overline'>{latest.title} / {latest.medium} / {latest.size}</Typography>
+              <Typography variant="overline">
+                {latest.title} / {latest.medium} / {latest.size}
+              </Typography>
             </Container>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant='h2' component='h3' className={classes.header}>
+            <Typography variant="h2" component="h3" className={classes.header}>
               Collections
             </Typography>
             <Divider />

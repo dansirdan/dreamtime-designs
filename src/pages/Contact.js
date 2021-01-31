@@ -300,7 +300,7 @@ const Contact = () => {
               >
                 <CardMedia
                   style={{ height: matchesMD ? "40vh" : "30vh" }}
-                  image="images/1.jpg"
+                  image="images/artist/33.jpg"
                   title="Stand In"
                 />
               </Card>
