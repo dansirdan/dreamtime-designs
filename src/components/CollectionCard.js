@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles(theme =>( {
+const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: "100%",
   },
@@ -23,35 +23,17 @@ const useStyles = makeStyles(theme =>( {
   },
 }));
 
-export default function ImgMediaCard({collection}) {
+export default function ImgMediaCard({ collection }) {
   const classes = useStyles();
   const history = useHistory();
   let procCollection = collection.charAt(0).toUpperCase() + collection.slice(1);
 
-  let path = '';
+  let path = "";
 
-  switch (collection) {
-    case "acrylics":
-      path= '/images/20.jpg';
-      break;
-    case "watercolor":
-      path= '/images/34.jpg';
-      break;
-    case "pastels":
-      path= '/images/13.jpg';
-      break;
-    case "portraits":
-      path= '/images/portraitsSub.jpg';
-      break;
-    case "birds-of-prey":
-      path= '/images/12.jpg';
-      break;
-    case "cats":
-      path= '/images/17.jpg';
-      break;
-    default:
-      path= "/images/0.jpg";
-      break;
+  if (collection === "cards") {
+    path = "/images/category-cards/0.jpg";
+  } else {
+    path = `/images/category-cards/${collection}.png`;
   }
 
   return (
@@ -65,7 +47,12 @@ export default function ImgMediaCard({collection}) {
           title={procCollection}
         />
         <CardContent>
-          <Typography className={classes.header} gutterBottom variant="h2" component="h4">
+          <Typography
+            className={classes.header}
+            gutterBottom
+            variant="h2"
+            component="h4"
+          >
             {procCollection}
           </Typography>
         </CardContent>
