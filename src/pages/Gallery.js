@@ -20,7 +20,7 @@ const Gallery = () => {
     setLoading(true);
   }, [collectionParam]);
 
-  const nextDetail = incomingIndex => {
+  const nextDetail = (incomingIndex) => {
     if (incomingIndex >= collections.length) {
       incomingIndex = 0;
     }
@@ -28,7 +28,7 @@ const Gallery = () => {
     setDetailIndex(incomingIndex);
   };
 
-  const previousDetail = incomingIndex => {
+  const previousDetail = (incomingIndex) => {
     if (incomingIndex < 0) {
       incomingIndex = collections.length - 1;
     }
@@ -36,7 +36,7 @@ const Gallery = () => {
     setDetailIndex(incomingIndex);
   };
 
-  const handleChangeDetail = direction => {
+  const handleChangeDetail = (direction) => {
     if (direction === "next") {
       const newDetailIndex = detailIndex + 1;
       nextDetail(newDetailIndex);
@@ -46,7 +46,7 @@ const Gallery = () => {
     }
   };
 
-  const handleToggleDetail = event => {
+  const handleToggleDetail = (event) => {
     const btnName = event.target.getAttribute("data-modal");
     if (btnName === "show") {
       const imgIndex = parseInt(event.target.getAttribute("data-index"));
