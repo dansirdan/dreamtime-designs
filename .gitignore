@@ -69,3 +69,5 @@ yarn.lock
 *.xslx
 
 src/images
+
+build
