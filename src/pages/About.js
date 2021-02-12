@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
   header: {
     textDecoration: "none",
     fontSize: "2rem",
-    padding: theme.spacing(2),
     textAlign: "left",
     color: theme.palette.text.secondary,
   },
@@ -31,49 +30,67 @@ const About = () => {
         alignItems: "center",
       }}>
       <Fade in={true}>
-        <Grid container spacing={4} style={{ marginTop: "20px" }}>
-          <Grid item xs={12} md={6}>
-            <Card square={true} elevation={0}>
-              <CardMedia
-                style={{ height: "70vh" }}
-                image='images/artist/about.jpg'
-                title='Stand In'
-              />
-            </Card>
-          </Grid>
-          <Grid container item xs={12} md={6} spacing={4}>
-            <Grid item xs={12}>
+        <Grid container>
+          <Grid container item justify='center' xs={12} spacing={2}>
+            <Grid item xs={12} md={10} lg={8}>
               <Typography
                 variant='h2'
                 component='h3'
                 className={classes.header}>
-                Statement
+                  About the Artist
               </Typography>
               <Divider />
-              <br />
-              <Typography variant='body1'>
-                Sit ea do minim minim cillum mollit do ea laboris eu ipsum
-                pariatur. Et ipsum commodo quis culpa occaecat sint sit ullamco
-                eiusmod quis pariatur. Cupidatat consectetur ipsum cupidatat
-                commodo qui mollit ea nostrud tempor.
-              </Typography>
-              <br />
-              <Typography variant='body1'>- Melony Mont-Eton</Typography>
             </Grid>
-            <Grid item xs={12}>
-              <Typography
-                variant='h2'
-                component='h3'
-                className={classes.header}>
-                About the Artist
-              </Typography>
-              <Divider />
-              <br />
+            <Grid item xs={12} md={10} lg={8}>
+              <img
+                style={{
+                  maxHeight: "60%",
+                  maxWidth: "50%",
+                  float: "left",
+                  marginRight: 20,
+                  marginBottom: 10,
+                }}
+                src='images/artist/about.jpg'
+                alt='Stand In'
+              />
               <Typography variant='body1'>
-                Sit ea do minim minim cillum mollit do ea laboris eu ipsum
-                pariatur. Et ipsum commodo quis culpa occaecat sint sit ullamco
-                eiusmod quis pariatur. Cupidatat consectetur ipsum cupidatat
-                commodo qui mollit ea nostrud tempor.
+                I can’t remember any time in my life when I wasn’t drawing or
+                interested in some form of art creation. It helped that I grew
+                up living around the world in countries like South America,
+                Thailand, Indonesia, Greece and the Middle East. Exploring art
+                across the world and having the luxury of seeing different
+                styles as well as studying under local artists helped create my
+                artistic foundation at a young age.
+                <br />
+                <br />
+                Today, traveling the world and in my own backyard of Colorado, I
+                find my inspirations to paint. I try not to limit myself to one
+                medium, style or concept. Life is about exploration which I love
+                to do through art.
+                <br />
+                <br />
+                When inspiration hits, I love taking the experience and breaking
+                it down into colors and shapes in my imagination first. You have
+                to see it inwardly first in a dream like state before it can
+                manifest here in the physical world. This inner vision is what
+                energizes me to eventually sit down and dream my paintings to
+                life.
+                <br />
+                <br />
+                My purpose is to try and capture in my paintings that moment in
+                time when I know everything is in its rightful place in the
+                universe.
+                <br />
+                <br />
+                On my website I have displayed paintings available for sale or
+                prints and several card series from some of my favorite
+                paintings. Also, if you are interested in commissioning a piece
+                please feel free to email me at the contact information below.
+                {/* <br/>
+                <br/>
+                <Typography variant="overline">
+                  - Melony Mont-Eton
+                </Typography> */}
               </Typography>
             </Grid>
           </Grid>
