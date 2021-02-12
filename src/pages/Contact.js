@@ -151,7 +151,7 @@ const Contact = () => {
             xs={12}>
             <form
               id='email-form'
-              style={{ width: "80%", backgroundColor: "white", padding: 20 }}
+              style={{ width: "100%", backgroundColor: "white", padding: 20 }}
               noValidate
               autoComplete='off'
               onSubmit={handleFormSubmit}>
