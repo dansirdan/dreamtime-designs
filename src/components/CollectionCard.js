@@ -31,7 +31,7 @@ export default function ImgMediaCard({ collection }) {
   let path = "";
 
   if (collection === "cards") {
-    path = "/images/category-cards/0.jpg";
+    path = "/images/category-cards/card2.jpg";
   } else {
     path = `/images/category-cards/${collection}.png`;
   }

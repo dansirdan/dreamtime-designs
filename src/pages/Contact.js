@@ -117,15 +117,15 @@ const Contact = () => {
         mailOptions,
         "user_vkZrAttpwKChdBqeBfvqz"
       )
-        .then(response =>{
+        .then(response => {
           if (response.status === 200) {
-            alert("Your email has been sent.")
+            alert("Your email has been sent.");
             resetForm();
           }
         })
         .catch(err => {
-          alert("Your email failed to send, please check information")
-          });
+          alert("Your email failed to send, please check information");
+        });
     }
   };
 
@@ -165,7 +165,9 @@ const Contact = () => {
                   <Typography variant='body1'>
                     Melony Mont-Eton is available for commissions, sales, and
                     general inquries on her artwork. Please fill out the form
-                    below and be sure to select the reason for your inquiry.
+                    below and be sure to select the reason for your inquiry. If
+                    you are inquiring for the birds of prey or flower cards
+                    please include that in your message.
                   </Typography>
                   <br />
                   <Divider />

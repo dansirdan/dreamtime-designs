@@ -246,7 +246,7 @@
     "path": "http://dreamtime-designs.com/images_art/41.jpg"
   },
   {
-    "title": "The Cullin Moutntains",
+    "title": "The Cullin Mountains",
     "medium": ["pastels"],
     "size": "27\" x 19\"",
     "path": "http://dreamtime-designs.com/images_art/42.jpg"
@@ -271,7 +271,7 @@
   },
   {
     "title": "Grand Canyon",
-    "medium": ["acrylic"],
+    "medium": ["acrylics"],
     "size": "16\" x 11 1/2\"",
     "path": "http://dreamtime-designs.com/images_art/46.jpg"
   },
@@ -367,7 +367,7 @@
   },
   {
     "title": "Monet's Garden",
-    "medium": ["acrylic"],
+    "medium": ["acrylics"],
     "size": "12\" x 10\"",
     "path": "http://dreamtime-designs.com/images_art/63.jpg"
   },
@@ -451,7 +451,7 @@
   },
   {
     "title": "Italian Mill",
-    "medium": ["acrylic"],
+    "medium": ["acrylics"],
     "size": "13\" x 10\"",
     "path": "http://dreamtime-designs.com/images_art/78.jpg"
   },
@@ -475,7 +475,7 @@
   },
   {
     "title": "Resting Hummingbird",
-    "medium": ["acrylic"],
+    "medium": ["acrylics"],
     "size": "14\" x 18\"",
     "path": "http://dreamtime-designs.com/images_art/82.jpg"
   },
@@ -520,5 +520,125 @@
     "medium": ["pastels"],
     "size": "18\" x 13\"",
     "path": "http://dreamtime-designs.com/images_art/89.jpg"
+  },
+  {
+    "title": "Aurora Borealis",
+    "medium": ["watercolor"],
+    "size": "11\" x 7\"",
+    "path": "http://dreamtime-designs.com/images_art/90.jpg"
+  },
+  {
+    "title": "Barn Owl in Flight",
+    "medium": ["birds-of-prey", "acrylics"],
+    "size": "18\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/91.jpg"
+  },
+  {
+    "title": "Black eyed Susan",
+    "medium": ["watercolor"],
+    "size": "18\" x 13\"",
+    "path": "http://dreamtime-designs.com/images_art/92.jpg"
+  },
+  {
+    "title": "Colorado Sunset",
+    "medium": ["watercolor"],
+    "size": "11\" x 7\"",
+    "path": "http://dreamtime-designs.com/images_art/93.jpg"
+  },
+  {
+    "title": "Dog Portrait",
+    "medium": ["watercolor"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/94.jpg"
+  },
+  {
+    "title": "Elgol, Isle of Skye",
+    "medium": ["watercolor"],
+    "size": "18\" x 12\"",
+    "path": "http://dreamtime-designs.com/images_art/95.jpg"
+  },
+  {
+    "title": "Fall in the Mountains",
+    "medium": ["watercolor"],
+    "size": "9\" x 12\"",
+    "path": "http://dreamtime-designs.com/images_art/96.jpg"
+  },
+  {
+    "title": "Freya",
+    "medium": ["watercolor", "cats"],
+    "size": "11\" x 11\"",
+    "path": "http://dreamtime-designs.com/images_art/97.jpg"
+  },
+  {
+    "title": "Hawk Abstract",
+    "medium": ["watercolor", "birds-of-prey"],
+    "size": "14\" x 21\"",
+    "path": "http://dreamtime-designs.com/images_art/98.jpg"
+  },
+  {
+    "title": "Montana Fishing III",
+    "medium": ["watercolor"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/99.jpg"
+  },
+  {
+    "title": "North Clear Creek Falls",
+    "medium": ["watercolor"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/100.jpg"
+  },
+  {
+    "title": "Pantheon",
+    "medium": ["watercolor"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/101.jpg"
+  },
+  {
+    "title": "River Otter",
+    "medium": ["watercolor"],
+    "size": "5\" x 7\"",
+    "path": "http://dreamtime-designs.com/images_art/102.jpg"
+  },
+  {
+    "title": "South Clear Creek Falls",
+    "medium": ["watercolor"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/103.jpg"
+  },
+  {
+    "title": "Tea Time",
+    "medium": ["watercolor"],
+    "size": "13\" x 7.5\"",
+    "path": "http://dreamtime-designs.com/images_art/104.jpg"
+  },
+  {
+    "title": "Winter Creek",
+    "medium": ["watercolor"],
+    "size": "11\" x 7\"",
+    "path": "http://dreamtime-designs.com/images_art/105.jpg"
+  },
+  {
+    "title": "Winter Solitude",
+    "medium": ["watercolor"],
+    "size": "10\" x 13\"",
+    "path": "http://dreamtime-designs.com/images_art/106.jpg"
+  },
+  {
+    "title": "Birds of Prey - card pack",
+    "medium": ["cards"],
+    "size": "contact for more information",
+    "path": "http://dreamtime-designs.com/images_art/card1.jpg"
+  },
+  {
+    "title": "Flowers - card pack",
+    "medium": ["cards"],
+    "size": "contact for more information",
+    "path": "http://dreamtime-designs.com/images_art/card2.jpg"
+  },
+  {
+    "title": "Retirement",
+    "medium": ["watercolor", "portraits"],
+    "size": "11\" x 14\"",
+    "path": "http://dreamtime-designs.com/images_art/107.jpg"
   }
 ]

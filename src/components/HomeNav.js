@@ -55,16 +55,42 @@ const MainNav = () => {
   const classes = useStyles();
 
   return (
-    <Grid container alignItems='center' spacing={0} className={classes.root}>
-      <Grid item xs={12}>
-        <Link to='/' style={{ textDecoration: "none" }}>
-          <Typography variant='h1' className={classes.title}>
-            Melony Mont-Eton
-          </Typography>
-        </Link>
+    <Grid container direction="row" alignItems="center" justify="center">
+      <Grid item xs={6} sm={4} md={2} lg={3} xl={6}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <img
+            style={{
+              height: "auto",
+              marginLeft: 10,
+              width: "100%",
+              borderRadius: "50%",
+            }}
+            src='images/logo.jpeg'
+            alt='Dream Time Designs logo'
+          />
+        </div>
       </Grid>
-      <Grid container item xs={9} sm={8} md={7}>
-        <NavLinks />
+      <Grid
+        container
+        item
+        alignItems='center'
+        xs={12}
+        sm={8}
+        md={10}
+        lg={9}
+        xl={12}
+        spacing={0}
+        className={classes.root}>
+        <Grid item xs={12}>
+          <Link to='/' style={{ textDecoration: "none" }}>
+            <Typography variant='h1' className={classes.title}>
+              Melony Mont-Eton
+            </Typography>
+          </Link>
+        </Grid>
+        <Grid container item xs={9} sm={8} md={7}>
+          <NavLinks />
+        </Grid>
       </Grid>
     </Grid>
   );
