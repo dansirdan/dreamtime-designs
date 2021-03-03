@@ -37,7 +37,7 @@
   },
   {
     "title": "Barn Owl",
-    "medium": ["watercolor"],
+    "medium": ["watercolor", "birds-of-prey"],
     "size": "13\" x 8 1/2\"",
     "path": "http://dreamtime-designs.com/images_art/7.jpg"
   },
@@ -154,12 +154,6 @@
     "medium": ["watercolor"],
     "size": "13 1/2\" x 10 1/2\"",
     "path": "http://dreamtime-designs.com/images_art/26.jpg"
-  },
-  {
-    "title": "Black Eyed Susans",
-    "medium": ["watercolor", "flowers"],
-    "size": "14\" x 8 1/2\"",
-    "path": "http://dreamtime-designs.com/images_art/27.jpg"
   },
   {
     "title": "Mont St Michel I",
@@ -468,12 +462,6 @@
     "path": "http://dreamtime-designs.com/images_art/80.jpg"
   },
   {
-    "title": "Winston",
-    "medium": ["watercolor"],
-    "size": "14 1/2\" x 10 1/2\"",
-    "path": "http://dreamtime-designs.com/images_art/81.jpg"
-  },
-  {
     "title": "Resting Hummingbird",
     "medium": ["acrylics"],
     "size": "14\" x 18\"",
@@ -553,13 +541,13 @@
   },
   {
     "title": "Elgol, Isle of Skye",
-    "medium": ["watercolor"],
+    "medium": ["pastels"],
     "size": "18\" x 12\"",
     "path": "http://dreamtime-designs.com/images_art/95.jpg"
   },
   {
     "title": "Fall in the Mountains",
-    "medium": ["watercolor"],
+    "medium": ["pastels"],
     "size": "9\" x 12\"",
     "path": "http://dreamtime-designs.com/images_art/96.jpg"
   },

@@ -70,7 +70,6 @@ const Main = () => {
                     style={{
                       height: "auto",
                       maxWidth: "1000px",
-                      maxHeight: "66vh",
                     }}
                     image={latest.path}
                     title={`latest work, click to go to ${latest.medium} gallery`}
