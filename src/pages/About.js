@@ -95,7 +95,7 @@ const About = () => {
                 When inspiration hits, I love taking the experience and breaking
                 it down into colors and shapes in my imagination first. You have
                 to see it inwardly first in a dream like state before it can
-                manifest it here in the physical world. The inner vision that
+                manifest here in the physical world. The inner vision that
                 emerges is what energizes me to eventually sit down and dream my
                 paintings to life.
                 <br />
