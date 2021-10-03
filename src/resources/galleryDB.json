@@ -55,19 +55,19 @@
   },
   {
     "title": "Bald Eagle",
-    "medium": ["watercolor","birds-of-prey"],
+    "medium": ["watercolor", "birds-of-prey"],
     "size": "22\" x 15\"",
     "path": "/images/10.jpg"
   },
   {
     "title": "Red Tailed Hawk",
-    "medium": ["watercolor","birds-of-prey"],
+    "medium": ["watercolor", "birds-of-prey"],
     "size": "15\" x 10 3/4\"",
     "path": "/images/11.jpg"
   },
   {
     "title": "Peregrine Falcon",
-    "medium": ["watercolor","birds-of-prey"],
+    "medium": ["watercolor", "birds-of-prey"],
     "size": "22\" x 15\"",
     "path": "/images/12.jpg"
   },
@@ -97,19 +97,19 @@
   },
   {
     "title": "Kyoo",
-    "medium": ["watercolor","cats"],
+    "medium": ["watercolor", "cats"],
     "size": "13\" x 10\"",
     "path": "/images/17.jpg"
   },
   {
     "title": "Melani",
-    "medium": ["watercolor","cats"],
+    "medium": ["watercolor", "cats"],
     "size": "13 1/2\" x 10 1/2\"",
     "path": "/images/18.jpg"
   },
   {
     "title": "Shab",
-    "medium": ["watercolor","cats"],
+    "medium": ["watercolor", "cats"],
     "size": "16\" x 11 1/2\"",
     "path": "/images/19.jpg"
   },
@@ -121,13 +121,13 @@
   },
   {
     "title": "Poppies",
-    "medium": ["watercolor","flowers"],
+    "medium": ["watercolor", "flowers"],
     "size": "7\" x 9\"",
     "path": "/images/21.jpg"
   },
   {
     "title": "Iris",
-    "medium": ["watercolor","flowers"],
+    "medium": ["watercolor", "flowers"],
     "size": "10 1/2\" x 14\"",
     "path": "/images/22.jpg"
   },
@@ -139,13 +139,13 @@
   },
   {
     "title": "White Thistle",
-    "medium": ["watercolor","flowers"],
+    "medium": ["watercolor", "flowers"],
     "size": "10 1/2\" x 6 1/2\"",
     "path": "/images/24.jpg"
   },
   {
     "title": "Daisies",
-    "medium": ["watercolor","flowers"],
+    "medium": ["watercolor", "flowers"],
     "size": "10 1/2\" x 7\"",
     "path": "/images/25.jpg"
   },
@@ -157,7 +157,7 @@
   },
   {
     "title": "Black Eyed Susans",
-    "medium": ["watercolor","flowers"],
+    "medium": ["watercolor", "flowers"],
     "size": "14\" x 8 1/2\"",
     "path": "/images/27.jpg"
   },
@@ -193,332 +193,374 @@
   },
   {
     "title": "Church of San Giorgio Maggiore",
-    "medium": ["watercolor","venice"],
+    "medium": ["watercolor", "venice"],
     "size": "13\" x 9 3/4\"",
     "path": "/images/33.jpg"
   },
   {
     "title": "Basilica di Santa Maria",
-    "medium": ["watercolor","venice"],
+    "medium": ["watercolor", "venice"],
     "size": "13\" x 9 3/4\"",
     "path": "/images/34.jpg"
   },
   {
     "title": "Venice Canals",
-    "medium": ["watercolor","venice"],
+    "medium": ["watercolor", "venice"],
     "size": "10\" x 13 3/4\"",
     "path": "/images/35.jpg"
   },
   {
     "title": "Denver Powwow I",
-    "medium": ["portraits","pastels"],
+    "medium": ["portraits", "pastels"],
     "size": "9\" x 12\"",
     "path": "/images/36.jpg"
   },
   {
     "title": "Great Horned Owl",
-    "medium": [ "watercolor", "birds-of-prey" ],
+    "medium": ["watercolor", "birds-of-prey"],
     "size": "10 1/2\" x 14\"",
     "path": "/images/37.jpg"
   },
   {
     "title": "Portrait Study II",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "13\" x 10\"",
     "path": "/images/38.jpg"
   },
   {
     "title": "Baby Portrait",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "20\" x 15\"",
     "path": "/images/39.jpg"
   },
   {
     "title": "Scotland Lochs",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10 1/2\" x 14 1/2\"",
     "path": "/images/40.jpg"
   },
   {
     "title": "Maroon Bells",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10 1/2\" x 14 1/2\"",
     "path": "/images/41.jpg"
   },
   {
     "title": "The Cullin Moutntains",
-    "medium": [ "pastel" ],
+    "medium": ["pastel"],
     "size": "27\" x 19\"",
     "path": "/images/42.jpg"
   },
   {
     "title": "Texas Grasslands",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10 1/2\" x 14 1/2\"",
     "path": "/images/43.jpg"
   },
   {
     "title": "Eastern Point Lighthouse",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/44.jpg"
   },
   {
     "title": "Assisi",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14 1/2\" x 10 1/2\"",
     "path": "/images/45.jpg"
   },
   {
     "title": "Grand Canyon",
-    "medium": [ "acrylic" ],
+    "medium": ["acrylic"],
     "size": "16\" x 11 1/2\"",
     "path": "/images/46.jpg"
   },
   {
     "title": "Winston",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14 1/2\" x 10 1/2\"",
     "path": "/images/47.jpg"
   },
   {
     "title": "Gus",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14 1/2\" x 10 1/2\"",
     "path": "/images/48.jpg"
   },
   {
     "title": "White Ranch Park",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10 1/2\"",
     "path": "/images/49.jpg"
   },
   {
     "title": "Sylvan Lake",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/50.jpg"
   },
   {
     "title": "Montana Fishing I",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/51.jpg"
   },
   {
     "title": "Sweet Magnolia",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/52.jpg"
   },
   {
     "title": "Montana Fishing II",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/53.jpg"
   },
   {
     "title": "Sammie",
-    "medium": [ "watercolor", "cats" ],
+    "medium": ["watercolor", "cats"],
     "size": "15\" x 10\"",
     "path": "/images/54.jpg"
   },
   {
     "title": "Aspen Delight",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10\" x 6\"",
     "path": "/images/55.jpg"
   },
   {
     "title": "Creede Mountain Range",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10\" x 6\"",
     "path": "/images/56.jpg"
   },
   {
     "title": "Creede Ghost Mines",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10 1/2\"",
     "path": "/images/57.jpg"
   },
   {
     "title": "Wedding Bliss",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "22\" x 15\"",
     "path": "/images/58.jpg"
   },
   {
     "title": "Secret Courtyard",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/59.jpg"
   },
   {
     "title": "Wedding Promises",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "14\" x 10\"",
     "path": "/images/60.jpg"
   },
   {
     "title": "Baby Portrait II",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "14\" x 10\"",
     "path": "/images/61.jpg"
   },
   {
     "title": "Monet's Garden",
-    "medium": [ "acrylic" ],
+    "medium": ["acrylic"],
     "size": "12\" x 10\"",
     "path": "/images/63.jpg"
   },
   {
     "title": "Monet's Cat",
-    "medium": [ "alcohol-ink" ],
+    "medium": ["alcohol-ink"],
     "size": "8 1/2\" x 11\"",
     "path": "/images/64.jpg"
   },
   {
     "title": "Giverny",
-    "medium": [ "alcohol-ink" ],
+    "medium": ["alcohol-ink"],
     "size": "8 1/2\" x 11\"",
     "path": "/images/65.jpg"
   },
   {
     "title": "Swiss Alps",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/66.jpg"
   },
   {
     "title": "The Giverny Geese",
-    "medium": [ "alcohol-ink" ],
+    "medium": ["alcohol-ink"],
     "size": "8 1/2\" x 11\"",
     "path": "/images/67.jpg"
   },
   {
     "title": "Cruising the Canals",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/68.jpg"
   },
   {
     "title": "Tulips",
-    "medium": [ "watercolor flowers" ],
+    "medium": ["watercolor flowers"],
     "size": "6 1/2\" x 10\"",
     "path": "/images/70.jpg"
   },
   {
     "title": "South Clear Creek Falls",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "19\"x 15\"",
     "path": "/images/71.jpg"
   },
   {
     "title": "South Clear Creek Falls Bear",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14 1/2\" x 10\"",
     "path": "/images/72.jpg"
   },
   {
     "title": "Love Lake",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10 1/2\" x 6 1/2\"",
     "path": "/images/81.jpg"
   },
   {
     "title": "Homestead Wildflowers",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "13 1/2\" x 10 1/2\"",
     "path": "/images/74.jpg"
   },
   {
     "title": "Pinehurst Homestead",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "13 1/2\" x 10 1/2\"",
     "path": "/images/75.jpg"
   },
   {
     "title": "Imogen Pass",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "7\" x 10 1/2\"",
     "path": "/images/76.jpg"
   },
   {
     "title": "Cool Lake",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "7\" x 10 1/2\"",
     "path": "/images/77.jpg"
   },
   {
     "title": "Italian Mill",
-    "medium": [ "acrylic" ],
+    "medium": ["acrylic"],
     "size": "13\" x 10\"",
     "path": "/images/78.jpg"
   },
   {
     "title": "Garden Mushrooms",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "11\" x 10 1/2\"",
     "path": "/images/79.jpg"
   },
   {
     "title": "Monet's Grand Allee",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10\" x 7 1/2\"",
     "path": "/images/80.jpg"
   },
   {
     "title": "Winston",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14 1/2\" x 10 1/2\"",
     "path": "/images/81.jpg"
   },
   {
     "title": "Resting Hummingbird",
-    "medium": [ "acrylic" ],
+    "medium": ["acrylic"],
     "size": "14\" x 18\"",
     "path": "/images/82.jpg"
   },
   {
     "title": "Future Cowboy",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "14\" x 10\"",
     "path": "/images/83.jpg"
   },
   {
     "title": "Portugal Cathedral",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10\" x 12 1/2\"",
     "path": "/images/84.jpg"
   },
   {
     "title": "Pet Portrait",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "9\" x 12\"",
     "path": "/images/85.jpg"
   },
   {
     "title": "Canal Shadows",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "9\" x 7 1/2\"",
     "path": "/images/86.jpg"
   },
   {
     "title": "The Resting Cat in Oia",
-    "medium": [ "watercolor" ],
+    "medium": ["watercolor"],
     "size": "10\" x 6\"",
     "path": "/images/87.jpg"
   },
   {
     "title": "The Kiss",
-    "medium": [ "watercolor", "portraits" ],
+    "medium": ["watercolor", "portraits"],
     "size": "20\" x 15\"",
     "path": "/images/88.jpg"
   },
   {
     "title": "Sailing at Dusk",
-    "medium": [ "pastel" ],
+    "medium": ["pastel"],
     "size": "18\" x 13\"",
     "path": "/images/89.jpg"
+  },
+  {
+    "title": "Curiosity",
+    "medium": ["watercolor"],
+    "size": "10\" x 14\"",
+    "path": "/images/90.jpg"
+  },
+  {
+    "title": "Winter's Chill",
+    "medium": ["watercolor"],
+    "size": "10\" x 14\"",
+    "path": "/images/91.jpg"
+  },
+  {
+    "title": "Meteora",
+    "medium": ["watercolor"],
+    "size": "14\" x 14\"",
+    "path": "/images/92.jpg"
+  },
+  {
+    "title": "Quiet Fields",
+    "medium": ["watercolor"],
+    "size": "10\" x 14\"",
+    "path": "/images/93.jpg"
+  },
+  {
+    "title": "Sunrise Mesa Arch",
+    "medium": ["watercolor"],
+    "size": "11\" x 16\"",
+    "path": "/images/94.jpg"
+  },
+  {
+    "title": "First Granddaughter",
+    "medium": ["watercolor", "portraits"],
+    "size": "10\" x 14\"",
+    "path": "/images/95.jpg"
+  },
+  {
+    "title": "Red Rock Canyon Road",
+    "medium": ["watercolor"],
+    "size": "10\" x 14\"",
+    "path": "/images/96.jpg"
   }
 ]
