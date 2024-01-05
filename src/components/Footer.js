@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <div className='copy-right'>
-                <Typography variant='overline'>© 2020 Melony Mont-Eton</Typography>
+                <Typography variant='overline'>© 2024 Melony Mont-Eton</Typography>
             </div>
         </footer>
     )
