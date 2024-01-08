@@ -48,9 +48,30 @@ const About = () => {
                 variant='h2'
                 component='h3'
                 className={classes.header}>
-                About the Artist
+                Melony Mont-Eton
               </Typography>
               <Divider />
+              <Typography
+                variant='h2'
+                component='h3'
+                className={classes.header}>
+                Artist
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={10} lg={8}>
+            <Typography variant='body1'>
+              Drawing, painting, or some form of art creation has always been a part of Melony Mont-
+Eton’s life. She grew up living around the world in countries like South America, Thailand,
+Indonesia, Greece and the Middle East. Her exposure to this rich tapestry of cultural
+influences during her formative years laid the foundation for her unique artistic voice.
+                <br />
+                <br />
+                As a seasoned traveler, Melony draws inspiration from her global experiences and the
+scenic landscape of her current home in Colorado. Her artistic philosophy is one of
+unrestricted exploration, refusing to confine herself to a singular medium, style, or
+concept. For her, life is an ongoing voyage of discovery, and art serves as a medium
+through which she can express and navigate this exploration.
+              </Typography>
             </Grid>
             <Grid item xs={12} md={10} lg={8}>
               <div
@@ -77,39 +98,29 @@ const About = () => {
                 </Typography>
               </div>
               <Typography variant='body1'>
-                I can’t remember any time in my life when I wasn’t drawing or
-                interested in some form of art creation. It helped that I grew
-                up living around the world in countries like South America,
-                Thailand, Indonesia, Greece and the Middle East. Exploring art
-                across the world and having the luxury of seeing different
-                styles as well as studying under local artists helped create my
-                artistic foundation at a young age.
+                When struck by inspiration, Melony follows a unique process. She transforms her
+experiences into a kaleidoscope of colors and shapes within her imagination, creating a
+dream-like state. This internal vision serves as the blueprint for her paintings, allowing her
+to translate the intangible into tangible masterpieces.
                 <br />
                 <br />
-                Today, traveling the world and in my own backyard of Colorado, I
-                find my inspirations to paint. I try not to limit myself to one
-                medium, style or concept. Life is about exploration which I love
-                to do through art.
-                <br />
-                <br />
-                When inspiration hits, I love taking the experience and breaking
-                it down into colors and shapes in my imagination first. You have
-                to see it inwardly first in a dream like state before it can
-                manifest here in the physical world. The inner vision that
-                emerges is what energizes me to eventually sit down and dream my
-                paintings to life.
-                <br />
-                <br />
-                When I see a scene that catches my eye, whether it is the color,
-                the composition, or the subject matter, I try and look beyond
-                those ideas and see it with my heart. My purpose is to try and
-                capture in my paintings that moment in time when I know
-                everything is in its rightful place in the universe.
+                Her dedication to artistic excellence was recognized in 2021 when she attained the status
+of a Signature Member of the Colorado Watercolor Society. This achievement
+underscores her commitment to the watercolor medium and her proficiency in capturing
+the essence of her surroundings through her artwork.
                 {/* <br/>
                 <br/>
                 <Typography variant="overline">
                   - Melony Mont-Eton
                 </Typography> */}
+                <br />
+                <br />
+                Melony, a registered landscape architect resides in Parker, Colorado. In her 36 year
+career she worked on projects across the United States specializing in project
+management, training and estimating. Melony engages with a diverse range of art mediums,
+including pastels, acrylics, alcohol inks and watercolors. Her story is an inspiration for
+those who believe in the transformative power of art and the endless possibilities that
+come with a life dedicated to exploration and creativity.
               </Typography>
             </Grid>
             <Grid item xs={12} md={10} lg={8}>
